@@ -1,0 +1,1787 @@
+[    0.000000] Linux version 5.17.0-master-13410-g74164d284b29 (sbcd90@sbcd90) (gcc (GCC) 11.2.0, GNU ld (GNU Binutils) 2.38) #1 SMP PREEMPT_DYNAMIC Wed Mar 30 11:48:37 PDT 2022
+[    0.000000] Command line: BOOT_IMAGE=/vmlinuz-5.17.0-master-13410-g74164d284b29 root=UUID=0fcbf660-fe49-45f2-b9b2-844ee0cbddd7 rw rootfstype=ext4 loglevel=3 quiet
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.000000] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.000000] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[    0.000000] signal: max sigframe size: 1776
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000dffeffff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000dfff0000-0x00000000dfffffff] ACPI data
+[    0.000000] BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000021fffffff] usable
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] SMBIOS 2.5 present.
+[    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000002] kvm-clock: using sched offset of 8900736930 cycles
+[    0.000005] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000008] tsc: Detected 2591.998 MHz processor
+[    0.000941] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000944] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000947] last_pfn = 0x220000 max_arch_pfn = 0x400000000
+[    0.000956] Disabled
+[    0.000957] x86/PAT: MTRRs disabled, skipping PAT initialization too.
+[    0.000959] CPU MTRRs all blank - virtualized system.
+[    0.000961] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
+[    0.000965] last_pfn = 0xdfff0 max_arch_pfn = 0x400000000
+[    0.001016] found SMP MP-table at [mem 0x0009fff0-0x0009ffff]
+[    0.001384] RAMDISK: [mem 0x35da1000-0x36ec7fff]
+[    0.001388] ACPI: Early table checksum verification disabled
+[    0.001391] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+[    0.001395] ACPI: XSDT 0x00000000DFFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+[    0.001399] ACPI: FACP 0x00000000DFFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+[    0.001404] ACPI: DSDT 0x00000000DFFF0480 002325 (v02 VBOX   VBOXBIOS 00000002 INTL 20120111)
+[    0.001407] ACPI: FACS 0x00000000DFFF0200 000040
+[    0.001410] ACPI: FACS 0x00000000DFFF0200 000040
+[    0.001412] ACPI: APIC 0x00000000DFFF0240 00006C (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+[    0.001415] ACPI: SSDT 0x00000000DFFF02B0 0001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20120111)
+[    0.001417] ACPI: Reserving FACP table memory at [mem 0xdfff00f0-0xdfff01e3]
+[    0.001418] ACPI: Reserving DSDT table memory at [mem 0xdfff0480-0xdfff27a4]
+[    0.001419] ACPI: Reserving FACS table memory at [mem 0xdfff0200-0xdfff023f]
+[    0.001420] ACPI: Reserving FACS table memory at [mem 0xdfff0200-0xdfff023f]
+[    0.001420] ACPI: Reserving APIC table memory at [mem 0xdfff0240-0xdfff02ab]
+[    0.001421] ACPI: Reserving SSDT table memory at [mem 0xdfff02b0-0xdfff047b]
+[    0.001596] No NUMA configuration found
+[    0.001597] Faking a node at [mem 0x0000000000000000-0x000000021fffffff]
+[    0.001600] NODE_DATA(0) allocated [mem 0x21fff8000-0x21fffbfff]
+[    0.001615] Zone ranges:
+[    0.001615]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.001617]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.001618]   Normal   [mem 0x0000000100000000-0x000000021fffffff]
+[    0.001619]   Device   empty
+[    0.001619] Movable zone start for each node
+[    0.001620] Early memory node ranges
+[    0.001620]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.001621]   node   0: [mem 0x0000000000100000-0x00000000dffeffff]
+[    0.001622]   node   0: [mem 0x0000000100000000-0x000000021fffffff]
+[    0.001623] Initmem setup node 0 [mem 0x0000000000001000-0x000000021fffffff]
+[    0.001847] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.001860] On node 0, zone DMA: 97 pages in unavailable ranges
+[    0.022498] On node 0, zone Normal: 16 pages in unavailable ranges
+[    0.022954] ACPI: PM-Timer IO Port: 0x4008
+[    0.023001] IOAPIC[0]: apic_id 4, version 32, address 0xfec00000, GSI 0-23
+[    0.023004] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.023005] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[    0.023009] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.023014] smpboot: Allowing 4 CPUs, 0 hotplug CPUs
+[    0.023030] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.023031] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.023032] PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.023032] PM: hibernation: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.023033] PM: hibernation: Registered nosave memory: [mem 0xdfff0000-0xdfffffff]
+[    0.023034] PM: hibernation: Registered nosave memory: [mem 0xe0000000-0xfebfffff]
+[    0.023034] PM: hibernation: Registered nosave memory: [mem 0xfec00000-0xfec00fff]
+[    0.023035] PM: hibernation: Registered nosave memory: [mem 0xfec01000-0xfedfffff]
+[    0.023035] PM: hibernation: Registered nosave memory: [mem 0xfee00000-0xfee00fff]
+[    0.023036] PM: hibernation: Registered nosave memory: [mem 0xfee01000-0xfffbffff]
+[    0.023036] PM: hibernation: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+[    0.023037] [mem 0xe0000000-0xfebfffff] available for PCI devices
+[    0.023038] Booting paravirtualized kernel on KVM
+[    0.023040] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370452778343963 ns
+[    0.026401] setup_percpu: NR_CPUS:320 nr_cpumask_bits:320 nr_cpu_ids:4 nr_node_ids:1
+[    0.026774] percpu: Embedded 63 pages/cpu s221184 r8192 d28672 u524288
+[    0.026778] pcpu-alloc: s221184 r8192 d28672 u524288 alloc=1*2097152
+[    0.026780] pcpu-alloc: [0] 0 1 2 3 
+[    0.026794] kvm-guest: PV spinlocks enabled
+[    0.026796] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.026802] Fallback order for Node 0: 0 
+[    0.026804] Built 1 zonelists, mobility grouping on.  Total pages: 2064112
+[    0.026805] Policy zone: Normal
+[    0.026806] Kernel command line: BOOT_IMAGE=/vmlinuz-5.17.0-master-13410-g74164d284b29 root=UUID=0fcbf660-fe49-45f2-b9b2-844ee0cbddd7 rw rootfstype=ext4 loglevel=3 quiet
+[    0.026846] Unknown kernel command line parameters "BOOT_IMAGE=/vmlinuz-5.17.0-master-13410-g74164d284b29", will be passed to user space.
+[    0.027943] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, linear)
+[    0.028474] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.028805] mem auto-init: stack:byref_all(zero), heap alloc:on, heap free:off
+[    0.052449] Memory: 8115860K/8388152K available (14343K kernel code, 2107K rwdata, 11072K rodata, 1796K init, 3812K bss, 272032K reserved, 0K cma-reserved)
+[    0.052454] random: get_random_u64 called from __kmem_cache_create+0x2a/0x510 with crng_init=0
+[    0.052529] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.052538] Kernel/User page tables isolation: enabled
+[    0.052548] ftrace: allocating 45090 entries in 177 pages
+[    0.057765] ftrace: allocated 177 pages with 4 groups
+[    0.057806] Dynamic Preempt: full
+[    0.058048] rcu: Preemptible hierarchical RCU implementation.
+[    0.058049] rcu: 	RCU restricting CPUs from NR_CPUS=320 to nr_cpu_ids=4.
+[    0.058050] rcu: 	RCU priority boosting: priority 1 delay 500 ms.
+[    0.058051] 	Trampoline variant of Tasks RCU enabled.
+[    0.058051] 	Rude variant of Tasks RCU enabled.
+[    0.058052] 	Tracing variant of Tasks RCU enabled.
+[    0.058052] rcu: RCU calculated value of scheduler-enlistment delay is 30 jiffies.
+[    0.058053] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.060830] NR_IRQS: 20736, nr_irqs: 456, preallocated irqs: 16
+[    0.061460] kfence: initialized - using 2097152 bytes for 255 objects at 0x(____ptrval____)-0x(____ptrval____)
+[    0.061512] Console: colour dummy device 80x25
+[    0.061518] printk: console [tty0] enabled
+[    0.061563] ACPI: Core revision 20211217
+[    0.061891] APIC: Switch to symmetric I/O mode setup
+[    0.062252] x2apic enabled
+[    0.062682] Switched APIC routing to physical x2apic.
+[    0.064238] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.064257] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x255cb518234, max_idle_ns: 440795279333 ns
+[    0.064261] Calibrating delay loop (skipped) preset value.. 5186.99 BogoMIPS (lpj=8639993)
+[    0.064263] pid_max: default: 32768 minimum: 301
+[    0.064281] LSM: Security Framework initializing
+[    0.064285] landlock: Up and running.
+[    0.064286] Yama: becoming mindful.
+[    0.064290] LSM support for eBPF active
+[    0.064580] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.064589] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.064839] Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+[    0.064840] Last level dTLB entries: 4KB 64, 2MB 0, 4MB 0, 1GB 4
+[    0.064843] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.064844] Spectre V2 : Mitigation: Retpolines
+[    0.064845] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.064845] Speculative Store Bypass: Vulnerable
+[    0.064848] SRBDS: Unknown: Dependent on hypervisor status
+[    0.064849] MDS: Mitigation: Clear CPU buffers
+[    0.068917] Freeing SMP alternatives memory: 36K
+[    0.176150] smpboot: CPU0: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz (family: 0x6, model: 0x9e, stepping: 0xa)
+[    0.176244] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.176245] cblist_init_generic: Setting shift to 2 and lim to 1.
+[    0.176257] cblist_init_generic: Setting shift to 2 and lim to 1.
+[    0.176265] cblist_init_generic: Setting shift to 2 and lim to 1.
+[    0.176275] Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.
+[    0.176298] rcu: Hierarchical SRCU implementation.
+[    0.176582] NMI watchdog: Perf NMI watchdog permanently disabled
+[    0.176624] smp: Bringing up secondary CPUs ...
+[    0.176686] x86: Booting SMP configuration:
+[    0.176686] .... node  #0, CPUs:      #1 #2 #3
+[    0.181007] smp: Brought up 1 node, 4 CPUs
+[    0.181009] smpboot: Max logical packages: 1
+[    0.181010] smpboot: Total of 4 processors activated (20744.98 BogoMIPS)
+[    0.181427] devtmpfs: initialized
+[    0.181427] x86/mm: Memory block size: 128MB
+[    0.181427] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370867519511994 ns
+[    0.181427] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.181427] pinctrl core: initialized pinctrl subsystem
+[    0.181427] PM: RTC time: 08:08:15, date: 2022-03-31
+[    0.181707] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.184562] DMA: preallocated 1024 KiB GFP_KERNEL pool for atomic allocations
+[    0.184606] DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.184647] DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.184658] audit: initializing netlink subsys (disabled)
+[    0.184682] audit: type=2000 audit(1648738935.817:1): state=initialized audit_enabled=0 res=1
+[    0.184682] thermal_sys: Registered thermal governor 'fair_share'
+[    0.184682] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.184682] thermal_sys: Registered thermal governor 'step_wise'
+[    0.184682] thermal_sys: Registered thermal governor 'user_space'
+[    0.184682] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.184682] cpuidle: using governor ladder
+[    0.184682] cpuidle: using governor menu
+[    0.184682] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.184682] PCI: Using configuration type 1 for base access
+[    0.185450] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    0.185471] HugeTLB: can free 7 vmemmap pages for hugepages-2048kB
+[    0.185471] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.185471] ACPI: Added _OSI(Module Device)
+[    0.185471] ACPI: Added _OSI(Processor Device)
+[    0.185471] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.185471] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.185471] ACPI: Added _OSI(Linux-Dell-Video)
+[    0.185471] ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+[    0.185471] ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+[    0.188120] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[    0.189295] ACPI: Interpreter enabled
+[    0.189302] ACPI: PM: (supports S0 S5)
+[    0.189303] ACPI: Using IOAPIC for interrupt routing
+[    0.189437] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.189532] ACPI: Enabled 2 GPEs in block 00 to 07
+[    0.193672] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.193676] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI EDR HPX-Type3]
+[    0.193678] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    0.194493] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[    0.194873] PCI host bridge to bus 0000:00
+[    0.194875] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.194876] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.194877] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.194878] pci_bus 0000:00: root bus resource [mem 0xe0000000-0xfdffffff window]
+[    0.194879] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.195101] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+[    0.195832] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+[    0.196553] pci 0000:00:01.1: [8086:7111] type 00 class 0x01018a
+[    0.196947] pci 0000:00:01.1: reg 0x20: [io  0xd000-0xd00f]
+[    0.197113] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[    0.197114] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[    0.197115] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[    0.197116] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[    0.197480] pci 0000:00:02.0: [15ad:0405] type 00 class 0x030000
+[    0.197977] pci 0000:00:02.0: reg 0x10: [io  0xd010-0xd01f]
+[    0.201545] pci 0000:00:02.0: reg 0x14: [mem 0xe0000000-0xe0ffffff pref]
+[    0.204467] pci 0000:00:02.0: reg 0x18: [mem 0xf0000000-0xf01fffff]
+[    0.217709] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.218238] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+[    0.221020] pci 0000:00:03.0: reg 0x10: [mem 0xf0200000-0xf021ffff]
+[    0.224387] pci 0000:00:03.0: reg 0x18: [io  0xd020-0xd027]
+[    0.238134] pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000
+[    0.240615] pci 0000:00:04.0: reg 0x10: [io  0xd040-0xd05f]
+[    0.241017] pci 0000:00:04.0: reg 0x14: [mem 0xf0400000-0xf07fffff]
+[    0.244304] pci 0000:00:04.0: reg 0x18: [mem 0xf0800000-0xf0803fff pref]
+[    0.254746] pci 0000:00:05.0: [8086:2415] type 00 class 0x040100
+[    0.254882] pci 0000:00:05.0: reg 0x10: [io  0xd100-0xd1ff]
+[    0.254953] pci 0000:00:05.0: reg 0x14: [io  0xd200-0xd23f]
+[    0.255705] pci 0000:00:06.0: [106b:003f] type 00 class 0x0c0310
+[    0.257685] pci 0000:00:06.0: reg 0x10: [mem 0xf0804000-0xf0804fff]
+[    0.271627] pci 0000:00:07.0: [8086:7113] type 00 class 0x068000
+[    0.274664] pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+[    0.274676] pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+[    0.276184] pci 0000:00:0d.0: [8086:2829] type 00 class 0x010601
+[    0.277669] pci 0000:00:0d.0: reg 0x10: [io  0xd240-0xd247]
+[    0.280071] pci 0000:00:0d.0: reg 0x14: [io  0xd248-0xd24b]
+[    0.281051] pci 0000:00:0d.0: reg 0x18: [io  0xd250-0xd257]
+[    0.284317] pci 0000:00:0d.0: reg 0x1c: [io  0xd258-0xd25b]
+[    0.287160] pci 0000:00:0d.0: reg 0x20: [io  0xd260-0xd26f]
+[    0.287711] pci 0000:00:0d.0: reg 0x24: [mem 0xf0806000-0xf0807fff]
+[    0.299016] ACPI: PCI: Interrupt link LNKA configured for IRQ 11
+[    0.299271] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    0.299369] ACPI: PCI: Interrupt link LNKC configured for IRQ 9
+[    0.299465] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    0.299614] iommu: Default domain type: Translated 
+[    0.299615] iommu: DMA domain TLB invalidation policy: lazy mode 
+[    0.299748] SCSI subsystem initialized
+[    0.299799] libata version 3.00 loaded.
+[    0.299799] ACPI: bus type USB registered
+[    0.299799] usbcore: registered new interface driver usbfs
+[    0.299799] usbcore: registered new interface driver hub
+[    0.299799] usbcore: registered new device driver usb
+[    0.299799] pps_core: LinuxPPS API ver. 1 registered
+[    0.299799] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.299799] PTP clock support registered
+[    0.299799] EDAC MC: Ver: 3.0.0
+[    0.299799] NetLabel: Initializing
+[    0.299799] NetLabel:  domain hash size = 128
+[    0.299799] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.299799] NetLabel:  unlabeled traffic allowed by default
+[    0.299799] mctp: management component transport protocol core
+[    0.299799] NET: Registered PF_MCTP protocol family
+[    0.299799] PCI: Using ACPI for IRQ routing
+[    0.299799] PCI: pci_cache_line_size set to 64 bytes
+[    0.301111] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    0.301115] e820: reserve RAM buffer [mem 0xdfff0000-0xdfffffff]
+[    0.301128] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[    0.301128] pci 0000:00:02.0: vgaarb: bridge control possible
+[    0.301128] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    0.301128] vgaarb: loaded
+[    0.301128] clocksource: Switched to clocksource kvm-clock
+[    0.311026] VFS: Disk quotas dquot_6.6.0
+[    0.311026] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.311026] pnp: PnP ACPI init
+[    0.312507] pnp: PnP ACPI: found 2 devices
+[    0.322676] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.322719] NET: Registered PF_INET protocol family
+[    0.322998] IP idents hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.323664] tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes, linear)
+[    0.323684] TCP established hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.323967] TCP bind hash table entries: 65536 (order: 8, 1048576 bytes, linear)
+[    0.324080] TCP: Hash tables configured (established 65536 bind 65536)
+[    0.324120] MPTCP token hash table entries: 8192 (order: 5, 196608 bytes, linear)
+[    0.324138] UDP hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    0.324150] UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes, linear)
+[    0.324179] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.324182] NET: Registered PF_XDP protocol family
+[    0.324191] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.324194] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.324195] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.324196] pci_bus 0000:00: resource 7 [mem 0xe0000000-0xfdffffff window]
+[    0.324233] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.324247] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[    0.325285] PCI: CLS 0 bytes, default 64
+[    0.325321] Trying to unpack rootfs image as initramfs...
+[    0.337776] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.337779] software IO TLB: mapped [mem 0x00000000dbff0000-0x00000000dfff0000] (64MB)
+[    0.337831] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x255cb518234, max_idle_ns: 440795279333 ns
+[    0.337933] clocksource: Switched to clocksource tsc
+[    0.338050] platform rtc_cmos: registered platform RTC device (no PNP device found)
+[    0.339952] Initialise system trusted keyrings
+[    0.339959] Key type blacklist registered
+[    0.340211] workingset: timestamp_bits=41 max_order=21 bucket_order=0
+[    0.341212] zbud: loaded
+[    0.349070] Key type asymmetric registered
+[    0.349073] Asymmetric key parser 'x509' registered
+[    0.428282] Freeing initrd memory: 17564K
+[    0.430755] alg: self-tests for CTR-KDF (hmac(sha256)) passed
+[    0.430774] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 242)
+[    0.430881] io scheduler mq-deadline registered
+[    0.430882] io scheduler kyber registered
+[    0.430904] io scheduler bfq registered
+[    0.431948] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    0.432320] ACPI: AC: AC Adapter [AC] (off-line)
+[    0.432359] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    0.432383] ACPI: button: Power Button [PWRF]
+[    0.432452] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[    0.432463] ACPI: button: Sleep Button [SLPF]
+[    0.432753] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    0.433540] Non-volatile memory driver v1.3
+[    0.433541] Linux agpgart interface v0.103
+[    0.433542] AMD-Vi: AMD IOMMUv2 functionality not available on this system - This is not a bug.
+[    0.433552] ACPI: bus type drm_connector registered
+[    0.433859] ACPI: battery: Slot [BAT0] (battery present)
+[    0.434463] ahci 0000:00:0d.0: version 3.0
+[    0.434976] ahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled
+[    0.435101] ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+[    0.435103] ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+[    0.435577] scsi host0: ahci
+[    0.435622] ata1: SATA max UDMA/133 abar m8192@0xf0806000 port 0xf0806100 irq 21
+[    0.435646] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.435648] ehci-pci: EHCI PCI platform driver
+[    0.435654] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    0.435655] ohci-pci: OHCI PCI platform driver
+[    0.436137] ohci-pci 0000:00:06.0: OHCI PCI host controller
+[    0.436141] ohci-pci 0000:00:06.0: new USB bus registered, assigned bus number 1
+[    0.436189] ohci-pci 0000:00:06.0: irq 22, io mem 0xf0804000
+[    0.502943] usb usb1: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 5.17
+[    0.502946] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.502948] usb usb1: Product: OHCI PCI host controller
+[    0.502949] usb usb1: Manufacturer: Linux 5.17.0-master-13410-g74164d284b29 ohci_hcd
+[    0.502950] usb usb1: SerialNumber: 0000:00:06.0
+[    0.503027] hub 1-0:1.0: USB hub found
+[    0.503038] hub 1-0:1.0: 12 ports detected
+[    0.503375] uhci_hcd: USB Universal Host Controller Interface driver
+[    0.503408] usbcore: registered new interface driver usbserial_generic
+[    0.503411] usbserial: USB Serial support registered for generic
+[    0.503732] rtc_cmos rtc_cmos: registered as rtc0
+[    0.503758] rtc_cmos rtc_cmos: setting system clock to 2022-03-31T08:08:16 UTC (1648714096)
+[    0.503767] rtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram
+[    0.503785] intel_pstate: CPU model not supported
+[    0.503961] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.504020] vesafb: mode is 640x480x32, linelength=2560, pages=0
+[    0.504021] vesafb: scrolling: redraw
+[    0.504022] vesafb: Truecolor: size=8:8:8:8, shift=24:16:8:0
+[    0.504027] vesafb: framebuffer at 0xe0000000, mapped to 0x00000000b3d38072, using 1216k, total 1216k
+[    0.504049] fbcon: Deferring console take-over
+[    0.504050] fb0: VESA VGA frame buffer device
+[    0.504059] hid: raw HID events driver (C) Jiri Kosina
+[    0.504136] intel_pmc_core intel_pmc_core.0:  initialized
+[    0.504179] drop_monitor: Initializing network drop monitor service
+[    0.515112] Initializing XFRM netlink socket
+[    0.515179] NET: Registered PF_INET6 protocol family
+[    0.517999] Segment Routing with IPv6
+[    0.518000] RPL Segment Routing with IPv6
+[    0.518006] In-situ OAM (IOAM) with IPv6
+[    0.518019] NET: Registered PF_PACKET protocol family
+[    0.518319] IPI shorthand broadcast: enabled
+[    0.518326] sched_clock: Marking stable (515331187, 2957308)->(517669860, 618635)
+[    0.518632] registered taskstats version 1
+[    0.518983] Loading compiled-in X.509 certificates
+[    0.521339] Loaded X.509 cert 'Build time autogenerated kernel key: 464cfb984e52bc00c5fc33809bb69f610b4cd569'
+[    0.521639] zswap: loaded using pool lz4/z3fold
+[    0.522030] Key type ._fscrypt registered
+[    0.522031] Key type .fscrypt registered
+[    0.522031] Key type fscrypt-provisioning registered
+[    0.524646] PM:   Magic number: 14:223:120
+[    0.524736] RAS: Correctable Errors collector initialized.
+[    0.765391] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[    0.765788] ata1.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+[    0.765796] ata1.00: 251658240 sectors, multi 128: LBA48 NCQ (depth 32)
+[    0.766136] ata1.00: configured for UDMA/133
+[    0.766346] scsi 0:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+[    0.766681] sd 0:0:0:0: [sda] 251658240 512-byte logical blocks: (129 GB/120 GiB)
+[    0.766692] sd 0:0:0:0: [sda] Write Protect is off
+[    0.766695] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    0.766709] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    0.822140] usb 1-1: new full-speed USB device number 2 using ohci-pci
+[    0.836346]  sda: sda1 sda2 sda3
+[    0.851254] sd 0:0:0:0: [sda] Attached SCSI disk
+[    0.853823] Freeing unused decrypted memory: 2036K
+[    0.854270] Freeing unused kernel image (initmem) memory: 1796K
+[    0.854336] Write protecting the kernel read-only data: 28672k
+[    0.854983] Freeing unused kernel image (text/rodata gap) memory: 2040K
+[    0.855354] Freeing unused kernel image (rodata/data gap) memory: 1216K
+[    0.899886] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    0.899890] rodata_test: all tests were successful
+[    0.899891] x86/mm: Checking user space page tables
+[    0.936996] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    0.937001] Run /init as init process
+[    0.937003]   with arguments:
+[    0.937004]     /init
+[    0.937004]   with environment:
+[    0.937005]     HOME=/
+[    0.937006]     TERM=linux
+[    0.937006]     BOOT_IMAGE=/vmlinuz-5.17.0-master-13410-g74164d284b29
+[    0.948146] fbcon: Taking over console
+[    0.948199] Console: switching to colour frame buffer device 80x30
+[    0.996117] ata_piix 0000:00:01.1: version 2.13
+[    0.996843] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+[    0.996972] scsi host1: ata_piix
+[    0.997213] scsi host2: ata_piix
+[    0.997235] ata2: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14
+[    0.997237] ata3: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15
+[    0.997377] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    0.997382] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    1.111387] usb 1-1: New USB device found, idVendor=80ee, idProduct=0021, bcdDevice= 1.00
+[    1.111391] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=0
+[    1.111392] usb 1-1: Product: USB Tablet
+[    1.111393] usb 1-1: Manufacturer: VirtualBox
+[    1.134192] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:06.0/usb1/1-1/1-1:1.0/0003:80EE:0021.0001/input/input2
+[    1.134241] hid-generic 0003:80EE:0021.0001: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:06.0-1/input0
+[    1.134271] usbcore: registered new interface driver usbhid
+[    1.134273] usbhid: USB HID core driver
+[    1.166333] ata3.00: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
+[    1.167269] scsi 2:0:0:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
+[    1.174014] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3
+[    1.192846] sr 2:0:0:0: [sr0] scsi3-mmc drive: 32x/32x xa/form2 tray
+[    1.192849] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    1.195202] sr 2:0:0:0: Attached scsi CD-ROM sr0
+[    1.604381] EXT4-fs (sda2): mounted filesystem with ordered data mode. Quota mode: none.
+[    1.625294] random: fast init done
+[    1.739452] systemd[1]: systemd 250.4-2-arch running in system mode (+PAM +AUDIT -SELINUX -APPARMOR -IMA +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT -QRENCODE +BZIP2 +LZ4 +XZ +ZLIB +ZSTD -BPF_FRAMEWORK +XKBCOMMON +UTMP -SYSVINIT default-hierarchy=unified)
+[    1.739474] systemd[1]: Detected virtualization oracle.
+[    1.739477] systemd[1]: Detected architecture x86-64.
+[    1.740909] systemd[1]: Hostname set to <sbcd90>.
+[    1.782827] systemd-fstab-generator[205]: Mount point  is not a valid path, ignoring.
+[    1.785052] systemd-fstab-generator[205]: Mount point  is not a valid path, ignoring.
+[    1.785639] systemd-fstab-generator[205]: Mount point  is not a valid path, ignoring.
+[    1.785904] random: zram-generator: uninitialized urandom read (16 bytes read)
+[    3.513128] random: crng init done
+[    3.532780] zram: Added device: zram0
+[    3.613429] systemd[1]: Queued start job for default target Graphical Interface.
+[    3.614076] systemd[1]: Created slice Slice /system/getty.
+[    3.614276] systemd[1]: Created slice Slice /system/modprobe.
+[    3.614497] systemd[1]: Created slice Slice /system/systemd-fsck.
+[    3.614657] systemd[1]: Created slice Slice /system/systemd-zram-setup.
+[    3.614786] systemd[1]: Created slice User and Session Slice.
+[    3.614832] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[    3.614868] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[    3.614961] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+[    3.614985] systemd[1]: Reached target Local Encrypted Volumes.
+[    3.614999] systemd[1]: Reached target Local Integrity Protected Volumes.
+[    3.615012] systemd[1]: Reached target Path Units.
+[    3.615023] systemd[1]: Reached target Remote File Systems.
+[    3.615034] systemd[1]: Reached target Slice Units.
+[    3.615050] systemd[1]: Reached target Local Verity Protected Volumes.
+[    3.615091] systemd[1]: Listening on Device-mapper event daemon FIFOs.
+[    3.615535] systemd[1]: Listening on LVM2 poll daemon socket.
+[    3.616312] systemd[1]: Listening on Process Core Dump Socket.
+[    3.616420] systemd[1]: Listening on Journal Audit Socket.
+[    3.616490] systemd[1]: Listening on Journal Socket (/dev/log).
+[    3.616564] systemd[1]: Listening on Journal Socket.
+[    3.616643] systemd[1]: Listening on udev Control Socket.
+[    3.616698] systemd[1]: Listening on udev Kernel Socket.
+[    3.617261] systemd[1]: Mounting Huge Pages File System...
+[    3.617839] systemd[1]: Mounting POSIX Message Queue File System...
+[    3.618443] systemd[1]: Mounting Kernel Debug File System...
+[    3.619334] systemd[1]: Mounting Kernel Trace File System...
+[    3.619941] systemd[1]: Starting Create List of Static Device Nodes...
+[    3.620528] systemd[1]: Starting Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+[    3.621258] systemd[1]: Starting Load Kernel Module configfs...
+[    3.621939] systemd[1]: Starting Load Kernel Module drm...
+[    3.622508] systemd[1]: Starting Load Kernel Module fuse...
+[    3.622549] systemd[1]: File System Check on Root Device was skipped because of a failed condition check (ConditionPathIsReadWrite=!/).
+[    3.623858] systemd[1]: Starting Journal Service...
+[    3.626084] systemd[1]: Starting Load Kernel Modules...
+[    3.626801] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    3.626856] systemd[1]: Repartition Root Disk was skipped because all trigger condition checks failed.
+[    3.627998] systemd[1]: Starting Coldplug All udev Devices...
+[    3.629848] systemd[1]: Mounted Huge Pages File System.
+[    3.629917] systemd[1]: Mounted POSIX Message Queue File System.
+[    3.629975] systemd[1]: Mounted Kernel Debug File System.
+[    3.630030] systemd[1]: Mounted Kernel Trace File System.
+[    3.632422] systemd[1]: Finished Create List of Static Device Nodes.
+[    3.633002] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[    3.633138] systemd[1]: Finished Load Kernel Module configfs.
+[    3.633410] systemd[1]: modprobe@drm.service: Deactivated successfully.
+[    3.633882] systemd[1]: Finished Load Kernel Module drm.
+[    3.635120] systemd[1]: Mounting Kernel Configuration File System...
+[    3.638332] EXT4-fs (sda2): re-mounted. Quota mode: none.
+[    3.641380] systemd[1]: Mounted Kernel Configuration File System.
+[    3.641963] systemd[1]: Finished Remount Root and Kernel File Systems.
+[    3.642022] audit: type=1130 audit(1648714099.636:2): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-remount-fs comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    3.642087] systemd[1]: First Boot Wizard was skipped because of a failed condition check (ConditionFirstBoot=yes).
+[    3.644213] systemd[1]: Rebuild Hardware Database was skipped because of a failed condition check (ConditionNeedsUpdate=/etc).
+[    3.645143] systemd[1]: Starting Load/Save Random Seed...
+[    3.645198] systemd[1]: Create System Users was skipped because of a failed condition check (ConditionNeedsUpdate=/etc).
+[    3.646391] systemd[1]: Starting Create Static Device Nodes in /dev...
+[    3.658081] systemd[1]: Started Journal Service.
+[    3.658167] audit: type=1130 audit(1648714099.653:3): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-journald comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    3.658387] audit: type=1130 audit(1648714099.653:4): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-random-seed comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    3.663542] systemd-journald[225]: Received client request to flush runtime journal.
+[    3.670023] fuse: init (API version 7.36)
+[    3.675500] audit: type=1130 audit(1648714099.666:5): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=modprobe@fuse comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    3.675504] audit: type=1131 audit(1648714099.666:6): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=modprobe@fuse comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    3.682775] audit: type=1130 audit(1648714099.676:7): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=lvm2-monitor comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    3.691298] audit: type=1130 audit(1648714099.686:8): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-tmpfiles-setup-dev comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    3.691918] audit: type=1334 audit(1648714099.686:9): prog-id=9 op=LOAD
+[    3.691968] audit: type=1334 audit(1648714099.686:10): prog-id=10 op=LOAD
+[    3.701610] device-mapper: uevent: version 1.0.3
+[    3.701728] device-mapper: ioctl: 4.46.0-ioctl (2022-02-22) initialised: dm-devel@redhat.com
+[    3.801728] ACPI: video: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[    3.801784] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input5
+[    3.846237] piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
+[    3.847264] input: PC Speaker as /devices/platform/pcspkr/input/input6
+[    3.847851] vboxguest: host-version: 6.1.32r149290 0x8000000f
+[    3.858810] vbg_heartbeat_init: Setting up heartbeat to trigger every 2000 milliseconds
+[    3.862333] input: VirtualBox mouse integration as /devices/pci0000:00/0000:00:04.0/input/input7
+[    3.869293] vboxguest: misc device minor 124, IRQ 20, I/O port d040, MMIO at 0x00000000f0400000 (size 0x0000000000400000)
+[    3.914139] e1000: Intel(R) PRO/1000 Network Driver
+[    3.914142] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    3.935099] mousedev: PS/2 mouse device common for all mice
+[    3.948344] zram0: detected capacity change from 0 to 8140800
+[    3.994775] Adding 4070396k swap on /dev/zram0.  Priority:100 extents:1 across:4070396k SSDscFS
+[    4.060528] RAPL PMU: API unit is 2^-32 Joules, 0 fixed counters, 10737418240 ms ovfl timer
+[    4.068656] cryptd: max_cpu_qlen set to 1000
+[    4.072874] checking generic (e0000000 130000) vs hw (e0000000 1000000)
+[    4.072877] fb0: switching to vmwgfx from VESA VGA
+[    4.073704] Console: switching to colour dummy device 80x25
+[    4.073967] vmwgfx 0000:00:02.0: vgaarb: deactivate vga console
+[    4.075444] vmwgfx 0000:00:02.0: [drm] FIFO at 0x00000000f0000000 size is 2048 kiB
+[    4.075452] vmwgfx 0000:00:02.0: [drm] VRAM at 0x00000000e0000000 size is 16384 kiB
+[    4.075458] vmwgfx 0000:00:02.0: [drm] Running on SVGA version 2.
+[    4.075462] vmwgfx 0000:00:02.0: [drm] DMA map mode: Caching DMA mappings.
+[    4.075501] vmwgfx 0000:00:02.0: [drm] Legacy memory limits: VRAM = 16384 kB, FIFO = 2048 kB, surface = 507904 kB
+[    4.075502] vmwgfx 0000:00:02.0: [drm] MOB limits: max mob size = 0 kB, max mob pages = 0
+[    4.075504] vmwgfx 0000:00:02.0: [drm] Capabilities: cursor, cursor bypass 2, alpha cursor, 3D, extended fifo, pitchlock, irq mask, gmr, traces, gmr2, screen object 2, 
+[    4.075506] vmwgfx 0000:00:02.0: [drm] Max GMR ids is 8192
+[    4.075506] vmwgfx 0000:00:02.0: [drm] Max number of GMR pages is 1048576
+[    4.075507] vmwgfx 0000:00:02.0: [drm] Maximum display memory size is 16384 kiB
+[    4.079160] vmwgfx 0000:00:02.0: [drm] Screen Object display unit initialized
+[    4.079378] vmwgfx 0000:00:02.0: [drm] Fifo max 0x00200000 min 0x00001000 cap 0x00000355
+[    4.079387] vmwgfx 0000:00:02.0: [drm] Available shader model: Legacy.
+[    4.079391] [drm:vmw_host_printf [vmwgfx]] *ERROR* Failed to send host log message.
+[    4.080581] EXT4-fs (sda3): mounted filesystem with ordered data mode. Quota mode: none.
+[    4.085871] fbcon: svgadrmfb (fb0) is primary device
+[    4.086895] Console: switching to colour frame buffer device 100x37
+[    4.088401] [drm] Initialized vmwgfx 2.20.0 20211206 for 0000:00:02.0 on minor 0
+[    4.100882] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input8
+[    4.152337] AVX2 version of gcm_enc/dec engaged.
+[    4.152555] AES CTR mode by8 optimization enabled
+[    4.416202] snd_intel8x0 0000:00:05.0: allow list rate for 1028:0177 is 48000
+[    4.429666] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:6d:1d:03
+[    4.429674] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[    4.432481] e1000 0000:00:03.0 enp0s3: renamed from eth0
+[    5.582959] kauditd_printk_skb: 9 callbacks suppressed
+[    5.582961] audit: type=1130 audit(1648714101.576:20): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-tmpfiles-setup comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    5.583534] audit: type=1334 audit(1648714101.576:21): prog-id=12 op=LOAD
+[    5.589039] audit: type=1127 audit(1648714101.583:22): pid=347 uid=0 auid=4294967295 ses=4294967295 msg=' comm="systemd-update-utmp" exe="/usr/lib/systemd/systemd-update-utmp" hostname=? addr=? terminal=? res=success'
+[    5.591944] audit: type=1130 audit(1648714101.586:23): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-update-utmp comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    5.614507] audit: type=1130 audit(1648714101.606:24): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-timesyncd comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    5.618224] audit: type=1334 audit(1648714101.613:25): prog-id=13 op=LOAD
+[    5.618315] audit: type=1334 audit(1648714101.613:26): prog-id=14 op=LOAD
+[    5.618345] audit: type=1334 audit(1648714101.613:27): prog-id=15 op=LOAD
+[    5.649221] audit: type=1130 audit(1648714101.643:28): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=dbus comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    5.650743] audit: type=1130 audit(1648714101.643:29): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-logind comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[    8.078536] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    8.079113] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s3: link becomes ready
+[   15.815081] kauditd_printk_skb: 8 callbacks suppressed
+[   15.815083] audit: type=1131 audit(1648714111.810:38): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[   35.758853] audit: type=1131 audit(1648714131.753:39): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-hostnamed comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[   35.834647] audit: type=1334 audit(1648714131.830:40): prog-id=0 op=UNLOAD
+[   35.834654] audit: type=1334 audit(1648714131.830:41): prog-id=0 op=UNLOAD
+[   35.834657] audit: type=1334 audit(1648714131.830:42): prog-id=0 op=UNLOAD
+[  346.534686] audit: type=1100 audit(1648740179.674:43): pid=356 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication grantors=pam_securetty,pam_shells,pam_faillock,pam_permit,pam_faillock acct="sbcd90" exe="/usr/bin/login" hostname=sbcd90 addr=? terminal=/dev/tty1 res=success'
+[  346.536406] audit: type=1101 audit(1648740179.677:44): pid=356 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting grantors=pam_access,pam_unix,pam_permit,pam_time acct="sbcd90" exe="/usr/bin/login" hostname=sbcd90 addr=? terminal=/dev/tty1 res=success'
+[  346.539718] audit: type=1103 audit(1648740179.680:45): pid=356 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred grantors=pam_securetty,pam_shells,pam_faillock,pam_permit,pam_faillock acct="sbcd90" exe="/usr/bin/login" hostname=sbcd90 addr=? terminal=/dev/tty1 res=success'
+[  346.539824] audit: type=1006 audit(1648740179.680:46): pid=356 uid=0 old-auid=4294967295 auid=1000 tty=tty1 old-ses=4294967295 ses=1 res=1
+[  346.539837] audit: type=1300 audit(1648740179.680:46): arch=c000003e syscall=1 success=yes exit=4 a0=5 a1=7fffc5a27dc0 a2=4 a3=0 items=0 ppid=1 pid=356 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=1000 fsgid=0 tty=tty1 ses=1 comm="login" exe="/usr/bin/login" key=(null)
+[  346.539846] audit: type=1327 audit(1648740179.680:46): proctitle=2F62696E2F6C6F67696E002D70002D2D
+[  346.563397] audit: type=1130 audit(1648740179.704:47): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=user-runtime-dir@1000 comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[  346.569980] audit: type=1101 audit(1648740179.710:48): pid=382 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting grantors=pam_access,pam_unix,pam_permit,pam_time acct="sbcd90" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[  346.570024] audit: type=1103 audit(1648740179.710:49): pid=382 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:setcred grantors=? acct="sbcd90" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=failed'
+[  346.570108] audit: type=1006 audit(1648740179.710:50): pid=382 uid=0 old-auid=4294967295 auid=1000 tty=(none) old-ses=4294967295 ses=2 res=1
+[  476.001190] kauditd_printk_skb: 6 callbacks suppressed
+[  476.001193] audit: type=1130 audit(1648740309.146:55): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=polkit comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[  477.015243] audit: type=1334 audit(1648740310.159:56): prog-id=19 op=LOAD
+[  477.015249] audit: type=1334 audit(1648740310.159:57): prog-id=20 op=LOAD
+[  477.078310] Service: Shared Clipboard
+[  477.094234] Worker loop running
+[  477.094589] Service: Host Version Check
+[  477.102398] Service: Seamless
+[  477.108496] audit: type=1130 audit(1648740310.252:58): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=upower comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[  477.121435] Service: Drag and Drop (DnD)
+[  477.144026] Proxy window=50331649, root window=1332 ...
+[  477.144528] Started
+[  477.144693] 6.1.32r149290
+[  608.452498] audit: type=1100 audit(1648740441.593:59): pid=998 uid=1000 auid=1000 ses=1 msg='op=PAM:authentication grantors=pam_faillock,pam_permit,pam_faillock acct="sbcd90" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  608.452725] audit: type=1101 audit(1648740441.593:60): pid=998 uid=1000 auid=1000 ses=1 msg='op=PAM:accounting grantors=pam_unix,pam_permit,pam_time acct="sbcd90" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  608.453786] audit: type=1110 audit(1648740441.593:61): pid=998 uid=1000 auid=1000 ses=1 msg='op=PAM:setcred grantors=pam_faillock,pam_permit,pam_faillock acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  608.455804] audit: type=1105 audit(1648740441.596:62): pid=998 uid=1000 auid=1000 ses=1 msg='op=PAM:session_open grantors=pam_systemd_home,pam_limits,pam_unix,pam_permit acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  608.457592] test_spinlock: loading out-of-tree module taints kernel.
+[  608.457619] test_spinlock: module verification failed: signature and/or required key missing - tainting kernel
+[  608.458121] start thread1
+[  608.458147] in thread1 function- 1
+[  608.458241] start thread2
+[  608.458309] in thread2 function- 2
+[  608.458742] audit: type=1106 audit(1648740441.599:63): pid=998 uid=1000 auid=1000 ses=1 msg='op=PAM:session_close grantors=pam_systemd_home,pam_limits,pam_unix,pam_permit acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  608.458747] audit: type=1104 audit(1648740441.599:64): pid=998 uid=1000 auid=1000 ses=1 msg='op=PAM:setcred grantors=pam_faillock,pam_permit,pam_faillock acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  608.513939] in thread2 function- 3
+[  608.577194] in thread2 function- 4
+[  608.738013] in thread2 function- 5
+[  608.800434] in thread2 function- 6
+[  608.940251] in thread2 function- 7
+[  609.147230] in thread2 function- 8
+[  609.212860] in thread2 function- 9
+[  609.266999] in thread2 function- 10
+[  609.357113] in thread2 function- 11
+[  609.463830] in thread2 function- 12
+[  609.481981] in thread1 function- 13
+[  609.522371] in thread2 function- 14
+[  609.582911] in thread2 function- 15
+[  609.645902] in thread2 function- 16
+[  609.708585] in thread2 function- 17
+[  609.777473] in thread2 function- 18
+[  609.836555] in thread2 function- 19
+[  609.904135] in thread2 function- 20
+[  609.972175] in thread2 function- 21
+[  610.037302] in thread2 function- 22
+[  610.098940] in thread2 function- 23
+[  610.156974] in thread2 function- 24
+[  610.219174] in thread2 function- 25
+[  610.273817] in thread2 function- 26
+[  610.341978] in thread2 function- 27
+[  610.406818] in thread2 function- 28
+[  610.465930] in thread2 function- 29
+[  610.489646] in thread1 function- 30
+[  610.526663] in thread2 function- 31
+[  610.590357] in thread2 function- 32
+[  610.647979] in thread2 function- 33
+[  610.703665] in thread2 function- 34
+[  610.765726] in thread2 function- 35
+[  610.823035] in thread2 function- 36
+[  610.890070] in thread2 function- 37
+[  610.946825] in thread2 function- 38
+[  611.006865] in thread2 function- 39
+[  611.075121] in thread2 function- 40
+[  611.131563] in thread2 function- 41
+[  611.197427] in thread2 function- 42
+[  611.253591] in thread2 function- 43
+[  611.317299] in thread2 function- 44
+[  611.386911] in thread2 function- 45
+[  611.447318] in thread2 function- 46
+[  611.511851] in thread1 function- 47
+[  611.512121] in thread2 function- 48
+[  611.570200] in thread2 function- 49
+[  611.637061] in thread2 function- 50
+[  611.705059] in thread2 function- 51
+[  611.760596] in thread2 function- 52
+[  611.818697] in thread2 function- 53
+[  611.874052] in thread2 function- 54
+[  611.931203] in thread2 function- 55
+[  611.993544] in thread2 function- 56
+[  612.054994] in thread2 function- 57
+[  612.111133] in thread2 function- 58
+[  612.170680] in thread2 function- 59
+[  612.227004] in thread2 function- 60
+[  612.285293] in thread2 function- 61
+[  612.340523] in thread2 function- 62
+[  612.396916] in thread2 function- 63
+[  612.456964] in thread2 function- 64
+[  612.516328] in thread2 function- 65
+[  612.540661] in thread1 function- 66
+[  612.571034] in thread2 function- 67
+[  612.630113] in thread2 function- 68
+[  612.684879] in thread2 function- 69
+[  612.741580] in thread2 function- 70
+[  612.800238] in thread2 function- 71
+[  612.857871] in thread2 function- 72
+[  612.922969] in thread2 function- 73
+[  612.980556] in thread2 function- 74
+[  613.046787] in thread2 function- 75
+[  613.100388] in thread2 function- 76
+[  613.161649] in thread2 function- 77
+[  613.220494] in thread2 function- 78
+[  613.277631] in thread2 function- 79
+[  613.341809] in thread2 function- 80
+[  613.407483] in thread2 function- 81
+[  613.467332] in thread2 function- 82
+[  613.522560] in thread2 function- 83
+[  613.556939] in thread1 function- 84
+[  613.581031] in thread2 function- 85
+[  613.639004] in thread2 function- 86
+[  613.693573] in thread2 function- 87
+[  613.755845] in thread2 function- 88
+[  613.810990] in thread2 function- 89
+[  613.876053] in thread2 function- 90
+[  613.936972] in thread2 function- 91
+[  613.997799] in thread2 function- 92
+[  614.083413] in thread2 function- 93
+[  614.151604] in thread2 function- 94
+[  614.224482] in thread2 function- 95
+[  614.295027] in thread2 function- 96
+[  614.364263] in thread2 function- 97
+[  614.424843] in thread2 function- 98
+[  614.481720] in thread2 function- 99
+[  614.550537] in thread2 function- 100
+[  614.567022] in thread1 function- 101
+[  614.715684] in thread2 function- 102
+[  614.777492] in thread2 function- 103
+[  614.836467] in thread2 function- 104
+[  614.937663] in thread2 function- 105
+[  614.994111] in thread2 function- 106
+[  615.052568] in thread2 function- 107
+[  615.150835] in thread2 function- 108
+[  615.257974] in thread2 function- 109
+[  615.314065] in thread2 function- 110
+[  615.481701] in thread2 function- 111
+[  615.580955] in thread2 function- 112
+[  615.580958] in thread1 function- 113
+[  615.655284] in thread2 function- 114
+[  615.733095] in thread2 function- 115
+[  615.800779] in thread2 function- 116
+[  615.896718] in thread2 function- 117
+[  615.950637] in thread2 function- 118
+[  616.027975] in thread2 function- 119
+[  616.088479] in thread2 function- 120
+[  616.153430] in thread2 function- 121
+[  616.218383] in thread2 function- 122
+[  616.274142] in thread2 function- 123
+[  616.451360] in thread2 function- 124
+[  616.538290] in thread2 function- 125
+[  616.594451] in thread2 function- 126
+[  616.598113] in thread1 function- 127
+[  616.650301] in thread2 function- 128
+[  616.733466] in thread2 function- 129
+[  616.855046] in thread2 function- 130
+[  616.914454] in thread2 function- 131
+[  617.068345] in thread2 function- 132
+[  617.136714] in thread2 function- 133
+[  617.191980] in thread2 function- 134
+[  617.262633] in thread2 function- 135
+[  617.332538] in thread2 function- 136
+[  617.408964] in thread2 function- 137
+[  617.475212] in thread2 function- 138
+[  617.541895] in thread2 function- 139
+[  617.607382] in thread2 function- 140
+[  617.625156] in thread1 function- 141
+[  617.664460] in thread2 function- 142
+[  617.733434] in thread2 function- 143
+[  617.796391] in thread2 function- 144
+[  617.860538] in thread2 function- 145
+[  617.931935] in thread2 function- 146
+[  618.003482] in thread2 function- 147
+[  618.071185] in thread2 function- 148
+[  618.141204] in thread2 function- 149
+[  618.213231] in thread2 function- 150
+[  618.272587] in thread2 function- 151
+[  618.339618] in thread2 function- 152
+[  618.407097] in thread2 function- 153
+[  618.482072] in thread2 function- 154
+[  618.557328] in thread2 function- 155
+[  618.624754] in thread2 function- 156
+[  618.647682] in thread1 function- 157
+[  618.693095] in thread2 function- 158
+[  618.760628] in thread2 function- 159
+[  618.827599] in thread2 function- 160
+[  618.943063] in thread2 function- 161
+[  619.006696] in thread2 function- 162
+[  619.180092] in thread2 function- 163
+[  619.244342] in thread2 function- 164
+[  619.304094] in thread2 function- 165
+[  619.362508] in thread2 function- 166
+[  619.431496] in thread2 function- 167
+[  619.497374] in thread2 function- 168
+[  619.564272] in thread2 function- 169
+[  619.621127] in thread2 function- 170
+[  619.660475] in thread1 function- 171
+[  619.677042] in thread2 function- 172
+[  619.751226] in thread2 function- 173
+[  619.824013] in thread2 function- 174
+[  619.940146] in thread2 function- 175
+[  619.993827] in thread2 function- 176
+[  620.051041] in thread2 function- 177
+[  620.120954] in thread2 function- 178
+[  620.180602] in thread2 function- 179
+[  620.237167] in thread2 function- 180
+[  620.297562] in thread2 function- 181
+[  620.359634] in thread2 function- 182
+[  620.421787] in thread2 function- 183
+[  620.479142] in thread2 function- 184
+[  620.536475] in thread2 function- 185
+[  620.597746] in thread2 function- 186
+[  620.657382] in thread2 function- 187
+[  620.683347] in thread1 function- 188
+[  620.713823] in thread2 function- 189
+[  620.771405] in thread2 function- 190
+[  620.831842] in thread2 function- 191
+[  620.899558] in thread2 function- 192
+[  620.953849] in thread2 function- 193
+[  621.021055] in thread2 function- 194
+[  621.095072] in thread2 function- 195
+[  621.159567] in thread2 function- 196
+[  621.220111] in thread2 function- 197
+[  621.278911] in thread2 function- 198
+[  621.341521] in thread2 function- 199
+[  621.409205] in thread2 function- 200
+[  621.465102] in thread2 function- 201
+[  621.535727] in thread2 function- 202
+[  621.591733] in thread2 function- 203
+[  621.651449] in thread2 function- 204
+[  621.691461] in thread1 function- 205
+[  621.717632] in thread2 function- 206
+[  621.783188] in thread2 function- 207
+[  621.849924] in thread2 function- 208
+[  621.905037] in thread2 function- 209
+[  621.960587] in thread2 function- 210
+[  622.021346] in thread2 function- 211
+[  622.088399] in thread2 function- 212
+[  622.149745] in thread2 function- 213
+[  622.223217] in thread2 function- 214
+[  622.295162] in thread2 function- 215
+[  622.373128] in thread2 function- 216
+[  622.479563] in thread2 function- 217
+[  622.547538] in thread2 function- 218
+[  622.614981] in thread2 function- 219
+[  622.677392] in thread2 function- 220
+[  622.700405] in thread1 function- 221
+[  622.733831] in thread2 function- 222
+[  622.802498] in thread2 function- 223
+[  622.867218] in thread2 function- 224
+[  622.945028] in thread2 function- 225
+[  623.009161] in thread2 function- 226
+[  623.072412] in thread2 function- 227
+[  623.129766] in thread2 function- 228
+[  623.200041] in thread2 function- 229
+[  623.259043] in thread2 function- 230
+[  623.316411] in thread2 function- 231
+[  623.373483] in thread2 function- 232
+[  623.434122] in thread2 function- 233
+[  623.505442] in thread2 function- 234
+[  623.572101] in thread2 function- 235
+[  623.633369] in thread2 function- 236
+[  623.687067] in thread2 function- 237
+[  623.721271] in thread1 function- 238
+[  623.756668] in thread2 function- 239
+[  623.814176] in thread2 function- 240
+[  623.874998] in thread2 function- 241
+[  623.934457] in thread2 function- 242
+[  624.001077] in thread2 function- 243
+[  624.066407] in thread2 function- 244
+[  624.120510] in thread2 function- 245
+[  624.179081] in thread2 function- 246
+[  624.253907] in thread2 function- 247
+[  624.330662] in thread2 function- 248
+[  624.408196] in thread2 function- 249
+[  624.474618] in thread2 function- 250
+[  624.538147] in thread2 function- 251
+[  624.602631] in thread2 function- 252
+[  624.675754] in thread2 function- 253
+[  624.727900] in thread1 function- 254
+[  624.730717] in thread2 function- 255
+[  624.790686] in thread2 function- 256
+[  624.858428] in thread2 function- 257
+[  624.914630] in thread2 function- 258
+[  624.984844] in thread2 function- 259
+[  625.040354] in thread2 function- 260
+[  625.105844] in thread2 function- 261
+[  625.170875] in thread2 function- 262
+[  625.236414] in thread2 function- 263
+[  625.292381] in thread2 function- 264
+[  625.353875] in thread2 function- 265
+[  625.430988] in thread2 function- 266
+[  625.503873] in thread2 function- 267
+[  625.560409] in thread2 function- 268
+[  625.618484] in thread2 function- 269
+[  625.681279] in thread2 function- 270
+[  625.741876] in thread1 function- 271
+[  625.742038] in thread2 function- 272
+[  625.802670] in thread2 function- 273
+[  625.858637] in thread2 function- 274
+[  625.916555] in thread2 function- 275
+[  625.981608] in thread2 function- 276
+[  626.037306] in thread2 function- 277
+[  626.109435] in thread2 function- 278
+[  626.178046] in thread2 function- 279
+[  626.236293] in thread2 function- 280
+[  626.293467] in thread2 function- 281
+[  626.347863] in thread2 function- 282
+[  626.449870] in thread2 function- 283
+[  626.536676] in thread2 function- 284
+[  626.590788] in thread2 function- 285
+[  626.669767] in thread2 function- 286
+[  626.733360] in thread2 function- 287
+[  626.766793] in thread1 function- 288
+[  626.808435] in thread2 function- 289
+[  626.915270] in thread2 function- 290
+[  627.096162] in thread2 function- 291
+[  627.153811] in thread2 function- 292
+[  627.210667] in thread2 function- 293
+[  627.309731] in thread2 function- 294
+[  627.366605] in thread2 function- 295
+[  627.464677] in thread2 function- 296
+[  627.561937] in thread2 function- 297
+[  627.617438] in thread2 function- 298
+[  627.676652] in thread2 function- 299
+[  627.744132] in thread2 function- 300
+[  627.803478] in thread2 function- 301
+[  627.803608] in thread1 function- 302
+[  627.915174] in thread2 function- 303
+[  627.970686] in thread2 function- 304
+[  628.064454] in thread2 function- 305
+[  628.120930] in thread2 function- 306
+[  628.188559] in thread2 function- 307
+[  628.258350] in thread2 function- 308
+[  628.317501] in thread2 function- 309
+[  628.379759] in thread2 function- 310
+[  628.478989] in thread2 function- 311
+[  628.551994] in thread2 function- 312
+[  628.644228] in thread2 function- 313
+[  628.700877] in thread2 function- 314
+[  628.795135] in thread2 function- 315
+[  628.839955] in thread1 function- 316
+[  628.942172] in thread2 function- 317
+[  629.023674] in thread2 function- 318
+[  629.090033] in thread2 function- 319
+[  629.147686] in thread2 function- 320
+[  629.208272] in thread2 function- 321
+[  629.271955] in thread2 function- 322
+[  629.337855] in thread2 function- 323
+[  629.398751] in thread2 function- 324
+[  629.459651] in thread2 function- 325
+[  629.575967] in thread2 function- 326
+[  629.639615] in thread2 function- 327
+[  629.694110] in thread2 function- 328
+[  629.751582] in thread2 function- 329
+[  629.807138] in thread2 function- 330
+[  629.847173] in thread1 function- 331
+[  629.864017] in thread2 function- 332
+[  629.928628] in thread2 function- 333
+[  630.080841] in thread2 function- 334
+[  630.158075] in thread2 function- 335
+[  630.215509] in thread2 function- 336
+[  630.276162] in thread2 function- 337
+[  630.344373] in thread2 function- 338
+[  630.403136] in thread2 function- 339
+[  630.460671] in thread2 function- 340
+[  630.525238] in thread2 function- 341
+[  630.687961] in thread2 function- 342
+[  630.744237] in thread2 function- 343
+[  630.804214] in thread2 function- 344
+[  630.861016] in thread2 function- 345
+[  630.861019] in thread1 function- 346
+[  630.927244] in thread2 function- 347
+[  630.993565] in thread2 function- 348
+[  631.060313] in thread2 function- 349
+[  631.114067] in thread2 function- 350
+[  631.175921] in thread2 function- 351
+[  631.240570] in thread2 function- 352
+[  631.309230] in thread2 function- 353
+[  631.366496] in thread2 function- 354
+[  631.421003] in thread2 function- 355
+[  631.486106] in thread2 function- 356
+[  631.544878] in thread2 function- 357
+[  631.609753] in thread2 function- 358
+[  631.669808] in thread2 function- 359
+[  631.723876] in thread2 function- 360
+[  631.787119] in thread2 function- 361
+[  631.844742] in thread2 function- 362
+[  631.877740] in thread1 function- 363
+[  631.901491] in thread2 function- 364
+[  631.957449] in thread2 function- 365
+[  632.045084] in thread2 function- 366
+[  632.100591] in thread2 function- 367
+[  632.185437] in thread2 function- 368
+[  632.271252] in thread2 function- 369
+[  632.342978] in thread2 function- 370
+[  632.422929] in thread2 function- 371
+[  632.478280] in thread2 function- 372
+[  632.538533] in thread2 function- 373
+[  632.607214] in thread2 function- 374
+[  632.667761] in thread2 function- 375
+[  632.725024] in thread2 function- 376
+[  632.780393] in thread2 function- 377
+[  632.837544] in thread2 function- 378
+[  632.894847] in thread2 function- 379
+[  632.897107] in thread1 function- 380
+[  632.950636] in thread2 function- 381
+[  633.007055] in thread2 function- 382
+[  633.063759] in thread2 function- 383
+[  633.121660] in thread2 function- 384
+[  633.177116] in thread2 function- 385
+[  633.233700] in thread2 function- 386
+[  633.290411] in thread2 function- 387
+[  633.349842] in thread2 function- 388
+[  633.404975] in thread2 function- 389
+[  633.461102] in thread2 function- 390
+[  633.517030] in thread2 function- 391
+[  633.574685] in thread2 function- 392
+[  633.631291] in thread2 function- 393
+[  633.691677] in thread2 function- 394
+[  633.748385] in thread2 function- 395
+[  633.807515] in thread2 function- 396
+[  633.860490] in thread2 function- 397
+[  633.917094] in thread2 function- 398
+[  633.928843] in thread1 function- 399
+[  633.973871] in thread2 function- 400
+[  634.031305] in thread2 function- 401
+[  634.087100] in thread2 function- 402
+[  634.144880] in thread2 function- 403
+[  634.200424] in thread2 function- 404
+[  634.257242] in thread2 function- 405
+[  634.313953] in thread2 function- 406
+[  634.370443] in thread2 function- 407
+[  634.427244] in thread2 function- 408
+[  634.484027] in thread2 function- 409
+[  634.541066] in thread2 function- 410
+[  634.597227] in thread2 function- 411
+[  634.653956] in thread2 function- 412
+[  634.711281] in thread2 function- 413
+[  634.768165] in thread2 function- 414
+[  634.830901] in thread2 function- 415
+[  634.897644] in thread2 function- 416
+[  634.943213] in thread1 function- 417
+[  635.062632] in thread2 function- 418
+[  635.117141] in thread2 function- 419
+[  635.201586] in thread2 function- 420
+[  635.300356] in thread2 function- 421
+[  635.354615] in thread2 function- 422
+[  635.466221] in thread2 function- 423
+[  635.537226] in thread2 function- 424
+[  635.612055] in thread2 function- 425
+[  635.679159] in thread2 function- 426
+[  635.735357] in thread2 function- 427
+[  635.790720] in thread2 function- 428
+[  635.850808] in thread2 function- 429
+[  635.907194] in thread2 function- 430
+[  635.953842] in thread1 function- 431
+[  635.967512] in thread2 function- 432
+[  636.034689] in thread2 function- 433
+[  636.090656] in thread2 function- 434
+[  636.181685] in thread2 function- 435
+[  636.244317] in thread2 function- 436
+[  636.304639] in thread2 function- 437
+[  636.373115] in thread2 function- 438
+[  636.443150] in thread2 function- 439
+[  636.503921] in thread2 function- 440
+[  636.561817] in thread2 function- 441
+[  636.622475] in thread2 function- 442
+[  636.683247] in thread2 function- 443
+[  636.738177] in thread2 function- 444
+[  636.798360] in thread2 function- 445
+[  636.856908] in thread2 function- 446
+[  636.924571] in thread2 function- 447
+[  636.967437] in thread1 function- 448
+[  636.980639] in thread2 function- 449
+[  637.041188] in thread2 function- 450
+[  637.099434] in thread2 function- 451
+[  637.155872] in thread2 function- 452
+[  637.217209] in thread2 function- 453
+[  637.278420] in thread2 function- 454
+[  637.343915] in thread2 function- 455
+[  637.401323] in thread2 function- 456
+[  637.457203] in thread2 function- 457
+[  637.519300] in thread2 function- 458
+[  637.580761] in thread2 function- 459
+[  637.638208] in thread2 function- 460
+[  637.693860] in thread2 function- 461
+[  637.753515] in thread2 function- 462
+[  637.827526] in thread2 function- 463
+[  637.898830] in thread2 function- 464
+[  637.961985] in thread2 function- 465
+[  637.980996] in thread1 function- 466
+[  638.083807] in thread2 function- 467
+[  638.141215] in thread2 function- 468
+[  638.197392] in thread2 function- 469
+[  638.380682] in thread2 function- 470
+[  638.437449] in thread2 function- 471
+[  638.512198] in thread2 function- 472
+[  638.580198] in thread2 function- 473
+[  638.649596] in thread2 function- 474
+[  638.690647] in thread2 function- 475
+[  638.750410] in thread2 function- 476
+[  638.812967] in thread2 function- 477
+[  638.871508] in thread2 function- 478
+[  638.936676] in thread2 function- 479
+[  639.000005] in thread2 function- 480
+[  639.000038] in thread1 function- 481
+[  639.053995] in thread2 function- 482
+[  639.167073] in thread2 function- 483
+[  639.245556] in thread2 function- 484
+[  639.323517] in thread2 function- 485
+[  639.474294] in thread2 function- 486
+[  639.538332] in thread2 function- 487
+[  639.605201] in thread2 function- 488
+[  639.669816] in thread2 function- 489
+[  639.727568] in thread2 function- 490
+[  639.791079] in thread2 function- 491
+[  639.866328] in thread2 function- 492
+[  639.923007] in thread2 function- 493
+[  639.979409] in thread2 function- 494
+[  640.014878] in thread1 function- 495
+[  640.044286] in thread2 function- 496
+[  640.101561] in thread2 function- 497
+[  640.158249] in thread2 function- 498
+[  640.225961] in thread2 function- 499
+[  640.280584] in thread2 function- 500
+[  640.337086] in thread2 function- 501
+[  640.396968] in thread2 function- 502
+[  640.451287] in thread2 function- 503
+[  640.514411] in thread2 function- 504
+[  640.573305] in thread2 function- 505
+[  640.641898] in thread2 function- 506
+[  640.706267] in thread2 function- 507
+[  640.760524] in thread2 function- 508
+[  640.817438] in thread2 function- 509
+[  640.947241] in thread2 function- 510
+[  641.010566] in thread2 function- 511
+[  641.023608] in thread1 function- 512
+[  641.067280] in thread2 function- 513
+[  641.123974] in thread2 function- 514
+[  641.181278] in thread2 function- 515
+[  641.244014] in thread2 function- 516
+[  641.303392] in thread2 function- 517
+[  641.358079] in thread2 function- 518
+[  641.417760] in thread2 function- 519
+[  641.477238] in thread2 function- 520
+[  641.545116] in thread2 function- 521
+[  641.601559] in thread2 function- 522
+[  641.661601] in thread2 function- 523
+[  641.720071] in thread2 function- 524
+[  641.778241] in thread2 function- 525
+[  641.833881] in thread2 function- 526
+[  641.890434] in thread2 function- 527
+[  641.950946] in thread2 function- 528
+[  642.009921] in thread2 function- 529
+[  642.034243] in thread1 function- 530
+[  642.068239] in thread2 function- 531
+[  642.123997] in thread2 function- 532
+[  642.186881] in thread2 function- 533
+[  642.250196] in thread2 function- 534
+[  642.310465] in thread2 function- 535
+[  642.381586] in thread2 function- 536
+[  642.449757] in thread2 function- 537
+[  642.504102] in thread2 function- 538
+[  642.563933] in thread2 function- 539
+[  642.620792] in thread2 function- 540
+[  642.677201] in thread2 function- 541
+[  642.734172] in thread2 function- 542
+[  642.790602] in thread2 function- 543
+[  642.861501] in thread2 function- 544
+[  642.920498] in thread2 function- 545
+[  642.987178] in thread2 function- 546
+[  643.044026] in thread2 function- 547
+[  643.050933] in thread1 function- 548
+[  643.111886] in thread2 function- 549
+[  643.170124] in thread2 function- 550
+[  643.238060] in thread2 function- 551
+[  643.301236] in thread2 function- 552
+[  643.357173] in thread2 function- 553
+[  643.413763] in thread2 function- 554
+[  643.471663] in thread2 function- 555
+[  643.527355] in thread2 function- 556
+[  643.584740] in thread2 function- 557
+[  643.640501] in thread2 function- 558
+[  643.697527] in thread2 function- 559
+[  643.757261] in thread2 function- 560
+[  643.823798] in thread2 function- 561
+[  643.877284] in thread2 function- 562
+[  643.939347] in thread2 function- 563
+[  643.994238] in thread2 function- 564
+[  644.066697] in thread2 function- 565
+[  644.066716] in thread1 function- 566
+[  644.133030] in thread2 function- 567
+[  644.188234] in thread2 function- 568
+[  644.245721] in thread2 function- 569
+[  644.315954] in thread2 function- 570
+[  644.453816] in thread2 function- 571
+[  644.522346] in thread2 function- 572
+[  644.582982] in thread2 function- 573
+[  644.648316] in thread2 function- 574
+[  644.818861] in thread2 function- 575
+[  644.885343] in thread2 function- 576
+[  644.940619] in thread2 function- 577
+[  644.999612] in thread2 function- 578
+[  645.066626] in thread2 function- 579
+[  645.077222] in thread1 function- 580
+[  645.125073] in thread2 function- 581
+[  645.189254] in thread2 function- 582
+[  645.250764] in thread2 function- 583
+[  645.334390] in thread2 function- 584
+[  645.399061] in thread2 function- 585
+[  645.455215] in thread2 function- 586
+[  645.513422] in thread2 function- 587
+[  645.573769] in thread2 function- 588
+[  645.636902] in thread2 function- 589
+[  645.690737] in thread2 function- 590
+[  645.747255] in thread2 function- 591
+[  645.804079] in thread2 function- 592
+[  645.863761] in thread2 function- 593
+[  645.920556] in thread2 function- 594
+[  645.977344] in thread2 function- 595
+[  646.034011] in thread2 function- 596
+[  646.090480] in thread1 function- 597
+[  646.093852] in thread2 function- 598
+[  646.158058] in thread2 function- 599
+[  646.221081] in thread2 function- 600
+[  646.281158] in thread2 function- 601
+[  646.338281] in thread2 function- 602
+[  646.397841] in thread2 function- 603
+[  646.455684] in thread2 function- 604
+[  646.514252] in thread2 function- 605
+[  646.575424] in thread2 function- 606
+[  646.631649] in thread2 function- 607
+[  646.687696] in thread2 function- 608
+[  646.746680] in thread2 function- 609
+[  646.803651] in thread2 function- 610
+[  646.859792] in thread2 function- 611
+[  646.915256] in thread2 function- 612
+[  646.971165] in thread2 function- 613
+[  647.027407] in thread2 function- 614
+[  647.085876] in thread2 function- 615
+[  647.100613] in thread1 function- 616
+[  647.146309] in thread2 function- 617
+[  647.202785] in thread2 function- 618
+[  647.266275] in thread2 function- 619
+[  647.323783] in thread2 function- 620
+[  647.400333] in thread2 function- 621
+[  647.457351] in thread2 function- 622
+[  647.530635] in thread2 function- 623
+[  647.596724] in thread2 function- 624
+[  647.650886] in thread2 function- 625
+[  647.707348] in thread2 function- 626
+[  647.765039] in thread2 function- 627
+[  647.821785] in thread2 function- 628
+[  647.879596] in thread2 function- 629
+[  647.951078] in thread2 function- 630
+[  648.007281] in thread2 function- 631
+[  648.063945] in thread2 function- 632
+[  648.113831] in thread1 function- 633
+[  648.123899] in thread2 function- 634
+[  648.180645] in thread2 function- 635
+[  648.237169] in thread2 function- 636
+[  648.297283] in thread2 function- 637
+[  648.357176] in thread2 function- 638
+[  648.413854] in thread2 function- 639
+[  648.470763] in thread2 function- 640
+[  648.530510] in thread2 function- 641
+[  648.588461] in thread2 function- 642
+[  648.647144] in thread2 function- 643
+[  648.704233] in thread2 function- 644
+[  648.763915] in thread2 function- 645
+[  648.820492] in thread2 function- 646
+[  648.877102] in thread2 function- 647
+[  648.937158] in thread2 function- 648
+[  648.993841] in thread2 function- 649
+[  649.050890] in thread2 function- 650
+[  649.103805] in thread2 function- 651
+[  649.130928] in thread1 function- 652
+[  649.160510] in thread2 function- 653
+[  649.220461] in thread2 function- 654
+[  649.280496] in thread2 function- 655
+[  649.337309] in thread2 function- 656
+[  649.399459] in thread2 function- 657
+[  649.454304] in thread2 function- 658
+[  649.525577] in thread2 function- 659
+[  649.584214] in thread2 function- 660
+[  649.641093] in thread2 function- 661
+[  649.698241] in thread2 function- 662
+[  649.755925] in thread2 function- 663
+[  649.828584] in thread2 function- 664
+[  649.900544] in thread2 function- 665
+[  649.957146] in thread2 function- 666
+[  650.013900] in thread2 function- 667
+[  650.071024] in thread2 function- 668
+[  650.127312] in thread2 function- 669
+[  650.140893] in thread1 function- 670
+[  650.194242] in thread2 function- 671
+[  650.254419] in thread2 function- 672
+[  650.311140] in thread2 function- 673
+[  650.367654] in thread2 function- 674
+[  650.427599] in thread2 function- 675
+[  650.489223] in thread2 function- 676
+[  650.551222] in thread2 function- 677
+[  650.617806] in thread2 function- 678
+[  650.675800] in thread2 function- 679
+[  650.733473] in thread2 function- 680
+[  650.787516] in thread2 function- 681
+[  650.858885] in thread2 function- 682
+[  650.913847] in thread2 function- 683
+[  650.971727] in thread2 function- 684
+[  651.038432] in thread2 function- 685
+[  651.105214] in thread2 function- 686
+[  651.153901] in thread1 function- 687
+[  651.160596] in thread2 function- 688
+[  651.220688] in thread2 function- 689
+[  651.282069] in thread2 function- 690
+[  651.345074] in thread2 function- 691
+[  651.400930] in thread2 function- 692
+[  651.459463] in thread2 function- 693
+[  651.515472] in thread2 function- 694
+[  651.574012] in thread2 function- 695
+[  651.634730] in thread2 function- 696
+[  651.692833] in thread2 function- 697
+[  651.750747] in thread2 function- 698
+[  651.810897] in thread2 function- 699
+[  651.871042] in thread2 function- 700
+[  651.928627] in thread2 function- 701
+[  651.987283] in thread2 function- 702
+[  652.044164] in thread2 function- 703
+[  652.101317] in thread2 function- 704
+[  652.157806] in thread2 function- 705
+[  652.180518] in thread1 function- 706
+[  652.217459] in thread2 function- 707
+[  652.274249] in thread2 function- 708
+[  652.332182] in thread2 function- 709
+[  652.389690] in thread2 function- 710
+[  652.447276] in thread2 function- 711
+[  652.513963] in thread2 function- 712
+[  652.570537] in thread2 function- 713
+[  652.628867] in thread2 function- 714
+[  652.685526] in thread2 function- 715
+[  652.741019] in thread2 function- 716
+[  652.799735] in thread2 function- 717
+[  652.854626] in thread2 function- 718
+[  652.917192] in thread2 function- 719
+[  652.974127] in thread2 function- 720
+[  653.034259] in thread2 function- 721
+[  653.097666] in thread2 function- 722
+[  653.156141] in thread2 function- 723
+[  653.218376] in thread1 function- 724
+[  653.218528] in thread2 function- 725
+[  653.284337] in thread2 function- 726
+[  653.340677] in thread2 function- 727
+[  653.397409] in thread2 function- 728
+[  653.457601] in thread2 function- 729
+[  653.538670] in thread2 function- 730
+[  653.594045] in thread2 function- 731
+[  653.662060] in thread2 function- 732
+[  653.720884] in thread2 function- 733
+[  653.777992] in thread2 function- 734
+[  653.837223] in thread2 function- 735
+[  653.894325] in thread2 function- 736
+[  653.970231] in thread2 function- 737
+[  654.027155] in thread2 function- 738
+[  654.081197] in thread2 function- 739
+[  654.137924] in thread2 function- 740
+[  654.194698] in thread2 function- 741
+[  654.257924] in thread1 function- 742
+[  654.257930] in thread2 function- 743
+[  654.313895] in thread2 function- 744
+[  654.371259] in thread2 function- 745
+[  654.430595] in thread2 function- 746
+[  654.491372] in thread2 function- 747
+[  654.549292] in thread2 function- 748
+[  654.604173] in thread2 function- 749
+[  654.660802] in thread2 function- 750
+[  654.717768] in thread2 function- 751
+[  654.788718] in thread2 function- 752
+[  654.843974] in thread2 function- 753
+[  654.900707] in thread2 function- 754
+[  654.960964] in thread2 function- 755
+[  655.017343] in thread2 function- 756
+[  655.073920] in thread2 function- 757
+[  655.130597] in thread2 function- 758
+[  655.187297] in thread2 function- 759
+[  655.243861] in thread2 function- 760
+[  655.287193] in thread1 function- 761
+[  655.300780] in thread2 function- 762
+[  655.361394] in thread2 function- 763
+[  655.417474] in thread2 function- 764
+[  655.488298] in thread2 function- 765
+[  655.557178] in thread2 function- 766
+[  655.624702] in thread2 function- 767
+[  655.680794] in thread2 function- 768
+[  655.737215] in thread2 function- 769
+[  655.793863] in thread2 function- 770
+[  655.850609] in thread2 function- 771
+[  655.907225] in thread2 function- 772
+[  655.963870] in thread2 function- 773
+[  656.020783] in thread2 function- 774
+[  656.077199] in thread2 function- 775
+[  656.134700] in thread2 function- 776
+[  656.193619] in thread2 function- 777
+[  656.247602] in thread2 function- 778
+[  656.300611] in thread1 function- 779
+[  656.304129] in thread2 function- 780
+[  656.360652] in thread2 function- 781
+[  656.419818] in thread2 function- 782
+[  656.473879] in thread2 function- 783
+[  656.533425] in thread2 function- 784
+[  656.587165] in thread2 function- 785
+[  656.643894] in thread2 function- 786
+[  656.703266] in thread2 function- 787
+[  656.758505] in thread2 function- 788
+[  656.813990] in thread2 function- 789
+[  656.870718] in thread2 function- 790
+[  656.931026] in thread2 function- 791
+[  656.990925] in thread2 function- 792
+[  657.056849] in thread2 function- 793
+[  657.124863] in thread2 function- 794
+[  657.191674] in thread2 function- 795
+[  657.255247] in thread2 function- 796
+[  657.320327] in thread1 function- 797
+[  657.320382] in thread2 function- 798
+[  657.385006] in thread2 function- 799
+[  657.440986] in thread2 function- 800
+[  657.498150] in thread2 function- 801
+[  657.554878] in thread2 function- 802
+[  657.621460] in thread2 function- 803
+[  657.689676] in thread2 function- 804
+[  657.744015] in thread2 function- 805
+[  657.800736] in thread2 function- 806
+[  657.858592] in thread2 function- 807
+[  657.917177] in thread2 function- 808
+[  657.974254] in thread2 function- 809
+[  658.034251] in thread2 function- 810
+[  658.091052] in thread2 function- 811
+[  658.147487] in thread2 function- 812
+[  658.207681] in thread2 function- 813
+[  658.264025] in thread2 function- 814
+[  658.320760] in thread2 function- 815
+[  658.327257] in thread1 function- 816
+[  658.377252] in thread2 function- 817
+[  658.437180] in thread2 function- 818
+[  658.497574] in thread2 function- 819
+[  658.557361] in thread2 function- 820
+[  658.617209] in thread2 function- 821
+[  658.673984] in thread2 function- 822
+[  658.727292] in thread2 function- 823
+[  658.786130] in thread2 function- 824
+[  658.848420] in thread2 function- 825
+[  658.908611] in thread2 function- 826
+[  658.973854] in thread2 function- 827
+[  659.034464] in thread2 function- 828
+[  659.091062] in thread2 function- 829
+[  659.161279] in thread2 function- 830
+[  659.230732] in thread2 function- 831
+[  659.285497] in thread2 function- 832
+[  659.341871] in thread2 function- 833
+[  659.344325] in thread1 function- 834
+[  659.397252] in thread2 function- 835
+[  659.457170] in thread2 function- 836
+[  659.529020] in thread2 function- 837
+[  659.591874] in thread2 function- 838
+[  659.647234] in thread2 function- 839
+[  659.706143] in thread2 function- 840
+[  659.761419] in thread2 function- 841
+[  659.847904] in thread2 function- 842
+[  659.904664] in thread2 function- 843
+[  659.961932] in thread2 function- 844
+[  660.017210] in thread2 function- 845
+[  660.073886] in thread2 function- 846
+[  660.130674] in thread2 function- 847
+[  660.189137] in thread2 function- 848
+[  660.243899] in thread2 function- 849
+[  660.302440] in thread2 function- 850
+[  660.358391] in thread2 function- 851
+[  660.360678] in thread1 function- 852
+[  660.414146] in thread2 function- 853
+[  660.472042] in thread2 function- 854
+[  660.527297] in thread2 function- 855
+[  660.587254] in thread2 function- 856
+[  660.643839] in thread2 function- 857
+[  660.700916] in thread2 function- 858
+[  660.757254] in thread2 function- 859
+[  660.815240] in thread2 function- 860
+[  660.870544] in thread2 function- 861
+[  660.927615] in thread2 function- 862
+[  660.987606] in thread2 function- 863
+[  661.051298] in thread2 function- 864
+[  661.107207] in thread2 function- 865
+[  661.163926] in thread2 function- 866
+[  661.225245] in thread2 function- 867
+[  661.281125] in thread2 function- 868
+[  661.340439] in thread2 function- 869
+[  661.367664] in thread1 function- 870
+[  661.399842] in thread2 function- 871
+[  661.457615] in thread2 function- 872
+[  661.513917] in thread2 function- 873
+[  661.573883] in thread2 function- 874
+[  661.634189] in thread2 function- 875
+[  661.694020] in thread2 function- 876
+[  661.751395] in thread2 function- 877
+[  661.810625] in thread2 function- 878
+[  661.867249] in thread2 function- 879
+[  661.924814] in thread2 function- 880
+[  661.984254] in thread2 function- 881
+[  662.045315] in thread2 function- 882
+[  662.100686] in thread2 function- 883
+[  662.157240] in thread2 function- 884
+[  662.217376] in thread2 function- 885
+[  662.278040] in thread2 function- 886
+[  662.334935] in thread2 function- 887
+[  662.384207] in thread1 function- 888
+[  662.393889] in thread2 function- 889
+[  662.451590] in thread2 function- 890
+[  662.509856] in thread2 function- 891
+[  662.567197] in thread2 function- 892
+[  662.623864] in thread2 function- 893
+[  662.680616] in thread2 function- 894
+[  662.740646] in thread2 function- 895
+[  662.793881] in thread2 function- 896
+[  662.853920] in thread2 function- 897
+[  662.910783] in thread2 function- 898
+[  662.967360] in thread2 function- 899
+[  663.027189] in thread2 function- 900
+[  663.083645] in thread2 function- 901
+[  663.148378] in thread2 function- 902
+[  663.216092] in thread2 function- 903
+[  663.280440] in thread2 function- 904
+[  663.341663] in thread2 function- 905
+[  663.394244] in thread1 function- 906
+[  663.397455] in thread2 function- 907
+[  663.455192] in thread2 function- 908
+[  663.521612] in thread2 function- 909
+[  663.595400] in thread2 function- 910
+[  663.653471] in thread2 function- 911
+[  663.710723] in thread2 function- 912
+[  663.770363] in thread2 function- 913
+[  663.824212] in thread2 function- 914
+[  663.890731] in thread2 function- 915
+[  663.951322] in thread2 function- 916
+[  664.018002] in thread2 function- 917
+[  664.076889] in thread2 function- 918
+[  664.144301] in thread2 function- 919
+[  664.204679] in thread2 function- 920
+[  664.261956] in thread2 function- 921
+[  664.332384] in thread2 function- 922
+[  664.396370] in thread2 function- 923
+[  664.411633] in thread1 function- 924
+[  664.451082] in thread2 function- 925
+[  664.516544] in thread2 function- 926
+[  664.571048] in thread2 function- 927
+[  664.633498] in thread2 function- 928
+[  664.693967] in thread2 function- 929
+[  664.753862] in thread2 function- 930
+[  664.815023] in thread2 function- 931
+[  664.877889] in thread2 function- 932
+[  664.945144] in thread2 function- 933
+[  665.018510] in thread2 function- 934
+[  665.077745] in thread2 function- 935
+[  665.137413] in thread2 function- 936
+[  665.199351] in thread2 function- 937
+[  665.263126] in thread2 function- 938
+[  665.325506] in thread2 function- 939
+[  665.384253] in thread2 function- 940
+[  665.420638] in thread1 function- 941
+[  665.442690] in thread2 function- 942
+[  665.497472] in thread2 function- 943
+[  665.556231] in thread2 function- 944
+[  665.618642] in thread2 function- 945
+[  665.687011] in thread2 function- 946
+[  665.741173] in thread2 function- 947
+[  665.797302] in thread2 function- 948
+[  665.859070] in thread2 function- 949
+[  665.927698] in thread2 function- 950
+[  665.987022] in thread2 function- 951
+[  666.044338] in thread2 function- 952
+[  666.111197] in thread2 function- 953
+[  666.171496] in thread2 function- 954
+[  666.241064] in thread2 function- 955
+[  666.297462] in thread2 function- 956
+[  666.354339] in thread2 function- 957
+[  666.413893] in thread2 function- 958
+[  666.440243] in thread1 function- 959
+[  666.487450] in thread2 function- 960
+[  666.557825] in thread2 function- 961
+[  666.614337] in thread2 function- 962
+[  666.675692] in thread2 function- 963
+[  666.732986] in thread2 function- 964
+[  666.794134] in thread2 function- 965
+[  666.863133] in thread2 function- 966
+[  666.922924] in thread2 function- 967
+[  666.983542] in thread2 function- 968
+[  667.043401] in thread2 function- 969
+[  667.110742] in thread2 function- 970
+[  667.176670] in thread2 function- 971
+[  667.237735] in thread2 function- 972
+[  667.299912] in thread2 function- 973
+[  667.354726] in thread2 function- 974
+[  667.411089] in thread2 function- 975
+[  667.453500] in thread1 function- 976
+[  667.477460] in thread2 function- 977
+[  667.544569] in thread2 function- 978
+[  667.612300] in thread2 function- 979
+[  667.669958] in thread2 function- 980
+[  667.732934] in thread2 function- 981
+[  667.790584] in thread2 function- 982
+[  667.847285] in thread2 function- 983
+[  667.901106] in thread2 function- 984
+[  667.960557] in thread2 function- 985
+[  668.017754] in thread2 function- 986
+[  668.074322] in thread2 function- 987
+[  668.134430] in thread2 function- 988
+[  668.193882] in thread2 function- 989
+[  668.250467] in thread2 function- 990
+[  668.313917] in thread2 function- 991
+[  668.382178] in thread2 function- 992
+[  668.441103] in thread2 function- 993
+[  668.472245] in thread1 function- 994
+[  668.498127] in thread2 function- 995
+[  668.558002] in thread2 function- 996
+[  668.620357] in thread2 function- 997
+[  668.674531] in thread2 function- 998
+[  668.733796] in thread2 function- 999
+[  668.788812] in thread2 function- 1000
+[  683.310692] audit: type=1100 audit(1648740516.456:65): pid=1037 uid=1000 auid=1000 ses=1 msg='op=PAM:authentication grantors=pam_faillock,pam_permit,pam_faillock acct="sbcd90" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+[  683.311029] audit: type=1101 audit(1648740516.456:66): pid=1037 uid=1000 auid=1000 ses=1 msg='op=PAM:accounting grantors=pam_unix,pam_permit,pam_time acct="sbcd90" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+[  683.311977] audit: type=1110 audit(1648740516.456:67): pid=1037 uid=1000 auid=1000 ses=1 msg='op=PAM:setcred grantors=pam_faillock,pam_permit,pam_faillock acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+[  683.314489] audit: type=1105 audit(1648740516.456:68): pid=1037 uid=1000 auid=1000 ses=1 msg='op=PAM:session_open grantors=pam_systemd_home,pam_limits,pam_unix,pam_permit acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+[  683.325715] audit: type=1106 audit(1648740516.469:69): pid=1037 uid=1000 auid=1000 ses=1 msg='op=PAM:session_close grantors=pam_systemd_home,pam_limits,pam_unix,pam_permit acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+[  683.325809] audit: type=1104 audit(1648740516.469:70): pid=1037 uid=1000 auid=1000 ses=1 msg='op=PAM:setcred grantors=pam_faillock,pam_permit,pam_faillock acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+[  828.852751] audit: type=1101 audit(1648740661.993:71): pid=1266 uid=1000 auid=1000 ses=1 msg='op=PAM:accounting grantors=pam_unix,pam_permit,pam_time acct="sbcd90" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  828.853607] audit: type=1110 audit(1648740661.996:72): pid=1266 uid=1000 auid=1000 ses=1 msg='op=PAM:setcred grantors=pam_faillock,pam_permit,pam_env,pam_faillock acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  828.855945] audit: type=1105 audit(1648740661.996:73): pid=1266 uid=1000 auid=1000 ses=1 msg='op=PAM:session_open grantors=pam_systemd_home,pam_limits,pam_unix,pam_permit acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  828.857648] ------------[ cut here ]------------
+[  828.857650] WARNING: CPU: 3 PID: 1267 at kernel/kthread.c:75 kthread_stop+0x140/0x170
+[  828.857657] Modules linked in: test_spinlock(OE-) snd_seq_dummy snd_hrtimer snd_seq snd_seq_device rfkill vfat fat intel_rapl_msr intel_rapl_common kvm_intel kvm irqbypass crct10dif_pclmul crc32_pclmul ghash_clmulni_intel aesni_intel snd_intel8x0 snd_ac97_codec crypto_simd cryptd ac97_bus vmwgfx rapl snd_pcm joydev snd_timer drm_ttm_helper snd lzo_rle e1000 mousedev psmouse intel_agp soundcore ttm vboxguest i2c_piix4 intel_gtt pcspkr mac_hid video dm_multipath dm_mod fuse zram bpf_preload ip_tables x_tables ext4 crc32c_generic crc16 mbcache jbd2 sr_mod cdrom serio_raw ata_generic atkbd pata_acpi usbhid libps2 crc32c_intel i8042 ata_piix serio
+[  828.857697] CPU: 3 PID: 1267 Comm: rmmod Tainted: G           OE     5.17.0-master-13410-g74164d284b29 #1 f6300707f9604b261e56c2efa8195a708eed63f9
+[  828.857700] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[  828.857702] RIP: 0010:kthread_stop+0x140/0x170
+[  828.857705] Code: ff e9 f7 fe ff ff 48 89 ef e8 cc 4a fd ff e9 58 ff ff ff be 01 00 00 00 4c 89 e7 e8 2a e3 45 00 f6 45 2e 20 0f 85 fe fe ff ff <0f> 0b e9 f7 fe ff ff be 03 00 00 00 4c 89 e7 e8 0c e3 45 00 e9 28
+[  828.857707] RSP: 0018:ffffa0a701a47dc8 EFLAGS: 00010246
+[  828.857709] RAX: 0000000000000001 RBX: 0000000000000800 RCX: 0000000000000005
+[  828.857710] RDX: 0000000000000003 RSI: ffffa0a701a47e00 RDI: ffff906cd93cc000
+[  828.857711] RBP: ffff906cd93cc000 R08: 000000000000006b R09: 0000000000000001
+[  828.857712] R10: 0000000000000001 R11: 0000000000000000 R12: ffff906cd93cc028
+[  828.857714] R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+[  828.857715] FS:  00007f66d60ea740(0000) GS:ffff906dd7d80000(0000) knlGS:0000000000000000
+[  828.857716] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[  828.857718] CR2: 0000562f6e4bad68 CR3: 0000000118956002 CR4: 00000000000706e0
+[  828.857722] Call Trace:
+[  828.857724]  <TASK>
+[  828.857727]  test_spinlock_module_exit+0x11/0x2e [test_spinlock ec8b796e225501b900b8b6aa26e5e78840ee5b52]
+[  828.857731]  __do_sys_delete_module+0x19e/0x2a0
+[  828.857742]  do_syscall_64+0x5c/0x80
+[  828.857748]  ? exit_to_user_mode_prepare+0x110/0x140
+[  828.857751]  ? syscall_exit_to_user_mode+0x22/0x40
+[  828.857753]  ? do_syscall_64+0x69/0x80
+[  828.857756]  ? exit_to_user_mode_prepare+0x110/0x140
+[  828.857758]  ? syscall_exit_to_user_mode+0x22/0x40
+[  828.857760]  ? do_syscall_64+0x69/0x80
+[  828.857762]  ? do_syscall_64+0x69/0x80
+[  828.857764]  entry_SYSCALL_64_after_hwframe+0x44/0xae
+[  828.857767] RIP: 0033:0x7f66d5b135bb
+[  828.857769] Code: 73 01 c3 48 8b 0d dd 67 0e 00 f7 d8 64 89 01 48 83 c8 ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa b8 b0 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d ad 67 0e 00 f7 d8 64 89 01 48
+[  828.857770] RSP: 002b:00007ffc22683238 EFLAGS: 00000206 ORIG_RAX: 00000000000000b0
+[  828.857772] RAX: ffffffffffffffda RBX: 0000562f6e4af7d0 RCX: 00007f66d5b135bb
+[  828.857774] RDX: 000000000000000a RSI: 0000000000000800 RDI: 0000562f6e4af838
+[  828.857775] RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000
+[  828.857776] R10: 00007f66d5ba3ac0 R11: 0000000000000206 R12: 00007ffc22683490
+[  828.857777] R13: 0000562f6e4af2a0 R14: 00007ffc22683e8a R15: 0000562f6e4af7d0
+[  828.857779]  </TASK>
+[  828.857780] ---[ end trace 0000000000000000 ]---
+[  828.857784] BUG: kernel NULL pointer dereference, address: 0000000000000000
+[  828.857787] #PF: supervisor write access in kernel mode
+[  828.857788] #PF: error_code(0x0002) - not-present page
+[  828.857790] PGD 0 P4D 0 
+[  828.857792] Oops: 0002 [#1] PREEMPT SMP PTI
+[  828.857794] CPU: 3 PID: 1267 Comm: rmmod Tainted: G        W  OE     5.17.0-master-13410-g74164d284b29 #1 f6300707f9604b261e56c2efa8195a708eed63f9
+[  828.857797] Hardware name: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[  828.857798] RIP: 0010:kthread_stop+0x45/0x170
+[  828.857802] Code: 00 f0 0f c1 45 28 85 c0 0f 84 30 01 00 00 8d 50 01 09 c2 0f 88 f5 00 00 00 f6 45 2e 20 0f 84 02 01 00 00 48 8b 9d d0 06 00 00 <f0> 80 0b 02 48 89 ef e8 8f f7 ff ff 48 89 ef e8 47 48 01 00 48 8d
+[  828.857803] RSP: 0018:ffffa0a701a47dc8 EFLAGS: 00010246
+[  828.857805] RAX: 0000000000000001 RBX: 0000000000000000 RCX: 0000000000000005
+[  828.857806] RDX: 0000000000000003 RSI: ffffa0a701a47e00 RDI: ffff906cd93cc000
+[  828.857808] RBP: ffff906cd93cc000 R08: 000000000000006b R09: 0000000000000001
+[  828.857809] R10: 0000000000000001 R11: 0000000000000000 R12: ffff906cd93cc028
+[  828.857810] R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+[  828.857812] FS:  00007f66d60ea740(0000) GS:ffff906dd7d80000(0000) knlGS:0000000000000000
+[  828.857814] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[  828.857815] CR2: 0000000000000000 CR3: 0000000118956002 CR4: 00000000000706e0
+[  828.857817] Call Trace:
+[  828.857818]  <TASK>
+[  828.857819]  test_spinlock_module_exit+0x11/0x2e [test_spinlock ec8b796e225501b900b8b6aa26e5e78840ee5b52]
+[  828.857822]  __do_sys_delete_module+0x19e/0x2a0
+[  828.857826]  do_syscall_64+0x5c/0x80
+[  828.857828]  ? exit_to_user_mode_prepare+0x110/0x140
+[  828.857831]  ? syscall_exit_to_user_mode+0x22/0x40
+[  828.857833]  ? do_syscall_64+0x69/0x80
+[  828.857836]  ? exit_to_user_mode_prepare+0x110/0x140
+[  828.857838]  ? syscall_exit_to_user_mode+0x22/0x40
+[  828.857840]  ? do_syscall_64+0x69/0x80
+[  828.857842]  ? do_syscall_64+0x69/0x80
+[  828.857845]  entry_SYSCALL_64_after_hwframe+0x44/0xae
+[  828.857847] RIP: 0033:0x7f66d5b135bb
+[  828.857849] Code: 73 01 c3 48 8b 0d dd 67 0e 00 f7 d8 64 89 01 48 83 c8 ff c3 66 2e 0f 1f 84 00 00 00 00 00 90 f3 0f 1e fa b8 b0 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d ad 67 0e 00 f7 d8 64 89 01 48
+[  828.857850] RSP: 002b:00007ffc22683238 EFLAGS: 00000206 ORIG_RAX: 00000000000000b0
+[  828.857852] RAX: ffffffffffffffda RBX: 0000562f6e4af7d0 RCX: 00007f66d5b135bb
+[  828.857854] RDX: 000000000000000a RSI: 0000000000000800 RDI: 0000562f6e4af838
+[  828.857855] RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000
+[  828.857856] R10: 00007f66d5ba3ac0 R11: 0000000000000206 R12: 00007ffc22683490
+[  828.857857] R13: 0000562f6e4af2a0 R14: 00007ffc22683e8a R15: 0000562f6e4af7d0
+[  828.857860]  </TASK>
+[  828.857861] Modules linked in: test_spinlock(OE-) snd_seq_dummy snd_hrtimer snd_seq snd_seq_device rfkill vfat fat intel_rapl_msr intel_rapl_common kvm_intel kvm irqbypass crct10dif_pclmul crc32_pclmul ghash_clmulni_intel aesni_intel snd_intel8x0 snd_ac97_codec crypto_simd cryptd ac97_bus vmwgfx rapl snd_pcm joydev snd_timer drm_ttm_helper snd lzo_rle e1000 mousedev psmouse intel_agp soundcore ttm vboxguest i2c_piix4 intel_gtt pcspkr mac_hid video dm_multipath dm_mod fuse zram bpf_preload ip_tables x_tables ext4 crc32c_generic crc16 mbcache jbd2 sr_mod cdrom serio_raw ata_generic atkbd pata_acpi usbhid libps2 crc32c_intel i8042 ata_piix serio
+[  828.857892] CR2: 0000000000000000
+[  828.857893] ---[ end trace 0000000000000000 ]---
+[  828.857895] RIP: 0010:kthread_stop+0x45/0x170
+[  828.857898] Code: 00 f0 0f c1 45 28 85 c0 0f 84 30 01 00 00 8d 50 01 09 c2 0f 88 f5 00 00 00 f6 45 2e 20 0f 84 02 01 00 00 48 8b 9d d0 06 00 00 <f0> 80 0b 02 48 89 ef e8 8f f7 ff ff 48 89 ef e8 47 48 01 00 48 8d
+[  828.857899] RSP: 0018:ffffa0a701a47dc8 EFLAGS: 00010246
+[  828.857901] RAX: 0000000000000001 RBX: 0000000000000000 RCX: 0000000000000005
+[  828.857902] RDX: 0000000000000003 RSI: ffffa0a701a47e00 RDI: ffff906cd93cc000
+[  828.857904] RBP: ffff906cd93cc000 R08: 000000000000006b R09: 0000000000000001
+[  828.857905] R10: 0000000000000001 R11: 0000000000000000 R12: ffff906cd93cc028
+[  828.857906] R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+[  828.857907] FS:  00007f66d60ea740(0000) GS:ffff906dd7d80000(0000) knlGS:0000000000000000
+[  828.857909] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[  828.857910] CR2: 0000000000000000 CR3: 0000000118956002 CR4: 00000000000706e0
+[  828.858269] audit: type=1106 audit(1648740661.999:74): pid=1266 uid=1000 auid=1000 ses=1 msg='op=PAM:session_close grantors=pam_systemd_home,pam_limits,pam_unix,pam_permit acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  828.858275] audit: type=1104 audit(1648740661.999:75): pid=1266 uid=1000 auid=1000 ses=1 msg='op=PAM:setcred grantors=pam_faillock,pam_permit,pam_env,pam_faillock acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[  932.555486] audit: type=1130 audit(1648740765.696:76): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-tmpfiles-clean comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[  932.555595] audit: type=1131 audit(1648740765.696:77): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=systemd-tmpfiles-clean comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[ 2160.536917] e1000: enp0s3 NIC Link is Down
+[ 2162.668023] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[ 2162.697233] audit: type=1130 audit(1648741995.852:78): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[ 2172.711491] audit: type=1131 audit(1648742005.865:79): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[11922.608800] e1000: enp0s3 NIC Link is Down
+[11924.717661] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[11924.744227] audit: type=1130 audit(1648752153.371:80): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[11934.748588] audit: type=1131 audit(1648752163.374:81): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[15862.806370] e1000: enp0s3 NIC Link is Down
+[15868.853264] audit: type=1130 audit(1648757133.427:82): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[15869.208214] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[15878.868154] audit: type=1131 audit(1648757143.441:83): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[20039.837536] e1000: enp0s3 NIC Link is Down
+[20044.106051] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[20044.139111] audit: type=1130 audit(1648762676.974:84): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[20054.160662] audit: type=1131 audit(1648762686.994:85): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[20097.437679] e1000: enp0s3 NIC Link is Down
+[20103.497674] audit: type=1130 audit(1648762736.331:86): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[20103.841464] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[20113.528886] audit: type=1131 audit(1648762746.364:87): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[24867.525018] e1000: enp0s3 NIC Link is Down
+[24873.567774] audit: type=1130 audit(1648769967.532:88): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[24873.928557] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[24883.589133] audit: type=1131 audit(1648769977.552:89): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[24972.063795] e1000: enp0s3 NIC Link is Down
+[24974.200363] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[24974.230857] audit: type=1130 audit(1648770068.196:90): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[24984.251687] audit: type=1131 audit(1648770078.216:91): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[25352.740311] audit: type=1100 audit(1648770446.710:92): pid=2860 uid=1000 auid=1000 ses=2 msg='op=PAM:unix_chkpwd acct="sbcd90" exe="/usr/bin/unix_chkpwd" hostname=? addr=? terminal=? res=success'
+[26788.788208] audit: type=1100 audit(1648774106.273:93): pid=4008 uid=1000 auid=1000 ses=2 msg='op=PAM:unix_chkpwd acct="sbcd90" exe="/usr/bin/unix_chkpwd" hostname=? addr=? terminal=? res=success'
+[31124.547955] e1000: enp0s3 NIC Link is Down
+[31130.610238] audit: type=1130 audit(1648778448.125:94): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[31130.943050] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[31140.614103] audit: type=1131 audit(1648778458.129:95): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[31216.278893] e1000: enp0s3 NIC Link is Down
+[31222.322721] audit: type=1130 audit(1648778539.839:96): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[31222.702181] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[31232.335789] audit: type=1131 audit(1648778549.852:97): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[31295.217638] e1000: enp0s3 NIC Link is Down
+[31301.307504] audit: type=1130 audit(1648778618.823:98): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[31301.608480] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[31311.323644] audit: type=1131 audit(1648778628.840:99): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[32886.136224] audit: type=1130 audit(1648797282.646:100): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=shadow comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[32886.157546] audit: type=1131 audit(1648797282.669:101): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=shadow comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[34074.923898] e1000: enp0s3 NIC Link is Down
+[34077.057141] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[34077.088287] audit: type=1130 audit(1648798473.605:102): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[34087.114128] audit: type=1131 audit(1648798483.635:103): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=NetworkManager-dispatcher comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+[42585.863662] audit: type=1100 audit(1648836632.432:104): pid=7516 uid=1000 auid=1000 ses=2 msg='op=PAM:unix_chkpwd acct="sbcd90" exe="/usr/bin/unix_chkpwd" hostname=? addr=? terminal=? res=success'
+[44702.498008] audit: type=1100 audit(1648838749.081:105): pid=7731 uid=1000 auid=1000 ses=2 msg='op=PAM:unix_chkpwd acct="sbcd90" exe="/usr/bin/unix_chkpwd" hostname=? addr=? terminal=? res=success'
+[50425.012732] audit: type=1100 audit(1648849161.779:106): pid=8264 uid=1000 auid=1000 ses=2 msg='op=PAM:unix_chkpwd acct="sbcd90" exe="/usr/bin/unix_chkpwd" hostname=? addr=? terminal=? res=success'
+[54392.537322] audit: type=1100 audit(1648855612.445:107): pid=9336 uid=1000 auid=1000 ses=1 msg='op=PAM:authentication grantors=pam_faillock,pam_permit,pam_faillock acct="sbcd90" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[54392.537448] audit: type=1101 audit(1648855612.445:108): pid=9336 uid=1000 auid=1000 ses=1 msg='op=PAM:accounting grantors=pam_unix,pam_permit,pam_time acct="sbcd90" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[54392.538694] audit: type=1110 audit(1648855612.448:109): pid=9336 uid=1000 auid=1000 ses=1 msg='op=PAM:setcred grantors=pam_faillock,pam_permit,pam_faillock acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[54392.540587] audit: type=1105 audit(1648855612.448:110): pid=9336 uid=1000 auid=1000 ses=1 msg='op=PAM:session_open grantors=pam_systemd_home,pam_limits,pam_unix,pam_permit acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[54392.542987] id : 0, name : book1, author : jb, borrow : 0, addr : ffff906cd774bc00
+[54392.542991] id : 1, name : book2, author : jb, borrow : 0, addr : ffff906cd774be40
+[54392.542993] book1 borrow : 0
+[54392.542994] book2 borrow : 0
+[54392.568471] borrow success 0, preempt_count : 0
+[54392.614934] borrow success 1, preempt_count : 0
+[54392.614940] id : 0, name : book1, author : jb, borrow : 1, addr : ffff906cd774b600
+[54392.614942] id : 1, name : book2, author : jb, borrow : 1, addr : ffff906cd774bc00
+[54392.631523] return success 0, preempt_count : 0
+[54392.675055] return success 1, preempt_count : 0
+[54392.675061] id : 0, name : book1, author : jb, borrow : 0, addr : ffff906cd774be40
+[54392.675064] id : 1, name : book2, author : jb, borrow : 0, addr : ffff906cd774b600
+[54392.676202] audit: type=1106 audit(1648855612.585:111): pid=9336 uid=1000 auid=1000 ses=1 msg='op=PAM:session_close grantors=pam_systemd_home,pam_limits,pam_unix,pam_permit acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[54392.676208] audit: type=1104 audit(1648855612.585:112): pid=9336 uid=1000 auid=1000 ses=1 msg='op=PAM:setcred grantors=pam_faillock,pam_permit,pam_faillock acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+[54410.070697] audit: type=1100 audit(1648855629.978:113): pid=9341 uid=1000 auid=1000 ses=1 msg='op=PAM:authentication grantors=pam_faillock,pam_permit,pam_faillock acct="sbcd90" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+[54410.070962] audit: type=1101 audit(1648855629.978:114): pid=9341 uid=1000 auid=1000 ses=1 msg='op=PAM:accounting grantors=pam_unix,pam_permit,pam_time acct="sbcd90" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+[54410.071943] audit: type=1110 audit(1648855629.982:115): pid=9341 uid=1000 auid=1000 ses=1 msg='op=PAM:setcred grantors=pam_faillock,pam_permit,pam_faillock acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+[54410.073992] audit: type=1105 audit(1648855629.982:116): pid=9341 uid=1000 auid=1000 ses=1 msg='op=PAM:session_open grantors=pam_systemd_home,pam_limits,pam_unix,pam_permit acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
