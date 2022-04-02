@@ -1,7 +1,7 @@
 kernel-module-rcu-test
 ======================
 
-A simple project to show how read-copy-update synchronization mechanism.
+A simple project to show how read-copy-update synchronization mechanism in the linux kernel.
 
 How spinlock works?
 ===================
