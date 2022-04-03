@@ -33,6 +33,8 @@ while (((unsigned int)secs) < 60000) {
 
 - Now, lets create 3 threads to simulate the behavior of Paul's example. 
 
+![image](./Screen%20Shot%202022-04-03%20at%204.40.06%20PM.png)
+
 ```
 printk(KERN_INFO "phased state change - init module - %llu", (ktime_get_ns() / 1000000000));
 thread1 = kthread_create(cco, NULL, "cco1");
