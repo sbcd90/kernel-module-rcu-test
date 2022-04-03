@@ -16,13 +16,10 @@ static void cco_carefully(void) {
     s64 secs = 0;
 
     start = ktime_get();
-//    do_gettimeofday(&start);
     while (((unsigned int)secs) < 60000) {
         stop = ktime_get();
-//        do_gettimeofday(&stop);
 
         secs = ktime_to_ms(ktime_sub(stop, start));
-//        secs = (double)(stop.tv_usec - start.tv_usec) / 1000000000 + (double)(stop.tv_sec - start.tv_sec);
     }
     printk(KERN_INFO "end cco_carefully");
 }
@@ -32,13 +29,10 @@ static void cco_quickly(void) {
     s64 secs = 0;
 
     start = ktime_get();
-//    do_gettimeofday(&start);
     while (((unsigned int)secs) < 60000) {
         stop = ktime_get();
-//        do_gettimeofday(&stop);
 
         secs = ktime_to_ms(ktime_sub(stop, start));
-//        secs = (double)(stop.tv_usec - start.tv_usec) / 1000000000 + (double)(stop.tv_sec - start.tv_sec);
     }
     printk(KERN_INFO "end cco_quickly");
 }
@@ -75,12 +69,12 @@ static int maint(void *args) {
 }
 
 static int test_phased_state_change_init(void) {
+    printk(KERN_INFO "phased state change - init module");
     thread1 = kthread_create(cco, NULL, "cco1");
     if (thread1) {
         printk(KERN_INFO "start cco1");
         wake_up_process(thread1);
     }
-//    cco();
     msleep(30000);
 
     thread2 = kthread_create(maint, NULL, "maint");
@@ -88,7 +82,6 @@ static int test_phased_state_change_init(void) {
         printk(KERN_INFO "start maint");
         wake_up_process(thread2);
     }
-//    maint();
     msleep(60000);
 
     thread4 = kthread_create(cco, NULL, "cco2");
@@ -96,7 +89,6 @@ static int test_phased_state_change_init(void) {
         printk(KERN_INFO "start cco2");
         wake_up_process(thread4);
     }
-//    cco();
     return 0;
 }
 
