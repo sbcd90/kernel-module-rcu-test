@@ -1,4 +1,7 @@
-- In this task, I try to figure out how RCU works in general in the linux kernel. In order to learn more about RCUs in general, I chose the `Phased state change` example provided by Paul in the [tutorial]().
+kernel-module-phased-state-change-example
+=========================================
+
+- In this task, I try to figure out how RCU works in general in the linux kernel. In order to learn more about RCUs in general, I chose the `Phased state change` example provided by Paul in the [tutorial](https://linuxfoundation.org/webinars/unraveling-rcu-usage-mysteries/).
 
 - In my example, there is a `common-case operation` & `maint operation`.
 The `common-case operation` should be done `quickly` during `normal` phase & should be done `carefully` during `maint` phase.
