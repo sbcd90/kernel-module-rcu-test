@@ -1,0 +1,1 @@
+cmd_/home/sbcd90/Documents/programs/kernel-module-rcu-test/kernel-module-addonly-list/Module.symvers := sed 's/\.ko$$/\.o/' /home/sbcd90/Documents/programs/kernel-module-rcu-test/kernel-module-addonly-list/modules.order | scripts/mod/modpost  -a  -o /home/sbcd90/Documents/programs/kernel-module-rcu-test/kernel-module-addonly-list/Module.symvers -e -i Module.symvers  -N -T -
